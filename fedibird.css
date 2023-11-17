@@ -107,6 +107,7 @@ a.status-link{
 
 /* リストカラム、サークルカラムの入力欄 */
 .column-inline-form label input{
+    color: var(--foreground);
 	background-color: var(--background-light);
 }
 
