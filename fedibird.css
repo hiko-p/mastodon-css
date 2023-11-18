@@ -117,6 +117,12 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 }
 
 /* アカウント情報のユーザメニュードロップダウン */
+.dropdown-menu,
+.dropdown-menu__item,
+.dropdown-menu__separator{
+	color: var(--foreground);
+	background: var(--background-light);
+}
 .dropdown-menu.bottom{
 	background-color: var(--background-light);
 }
