@@ -105,6 +105,11 @@ a.status-link{
 	height: 4rem;
 }
 
+/* リアクションボタンの最大サイズをカラム幅に合わせる（最大サイズ拡張） */
+span.reactions-bar__item__emoji img.emojione.custom-emoji{
+	max-width: 100%;
+}
+
 /* リストカラム、サークルカラムの入力欄 */
 .column-inline-form label input{
     color: var(--foreground);
