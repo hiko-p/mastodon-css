@@ -336,6 +336,10 @@ time {
 	content: attr(title) "\A";
 	font-size: calc(var(--info-font-size, 15px)*0.933);
 }
+.detailed-status__datetime time:after{
+	content: attr(title);
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
 
 /*
  * 通知の表記変更
