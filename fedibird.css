@@ -357,7 +357,8 @@ time {
 .notification .reactions-bar,
 .notification .status-card,
 .notification .status__action-bar,
-.notification .thumbnail-gallery{
+.notification .thumbnail-gallery,
+.notification .quote-status{
 	display:none;
 }
 .notification .status{
