@@ -166,6 +166,10 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 	color: var(--foreground);
 	background-color: var(--background-light);
 }
+.status.light .display-name strong,
+.status.light .status__content{
+	color: var(--foreground);
+}
 
 /* 
  * drawerカラムの調整
@@ -392,7 +396,8 @@ time {
 	display: flex;
 	flex-wrap: wrap;
 }
-.status__info:not(:has(.dt-published)) .status__display-name{
+.status__info:not(:has(.dt-published)) .status__display-name,
+.status.light .display-name{
 	min-width: 100%;
 	padding-right: 0;
 }
