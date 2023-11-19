@@ -89,6 +89,10 @@ a.status-link,
 	color: var(--foreground);
 	background-color: var(--background-light);
 }
+.status.light .display-name strong,
+.status.light .status__content{
+	color: var(--foreground);
+}
 
 /* 
  * drawerカラムの調整
@@ -306,6 +310,11 @@ time{
 	flex-wrap: wrap;
 	gap: 0;
 	padding-bottom: 0;
+}
+.status__info .status__display-name,
+.status.light .display-name{
+	min-width: 100%;
+	padding-right: 0;
 }
 /* 公開期限、投稿日時表記を右揃えに */
 .status__relative-time,
