@@ -1,0 +1,463 @@
+/*
+ * カスタムCSS for fedibird.com モダンテーマ
+ *
+ */
+/* 色指定 */
+:root{
+	/* for ダーク or ハイコントラスト */
+	--foreground: rgb(255, 255, 255);
+	--background-drawer: rgb(24, 26, 27);
+	--background-dark: rgb(24, 26, 27);
+	--background-light: rgb(35, 38, 40);
+	--active: rgb(225, 137, 59);
+	--disabled: rgb(155, 174, 200);
+	--calendar-weekend: rgb(255, 0, 0);
+	--button-foreground: rgb(255, 255, 255);
+	--button-normal: rgb(43, 144, 217);
+	--button-active: rgb(86, 167, 225);
+	--compose-button-fg: rgb(96, 105, 132);
+
+	/* for ライト */
+	/*
+	--foreground: rgb(0, 0, 0);
+	--background-drawer: rgb(239, 243, 245);
+	--background-dark: rgb(255, 255, 255);
+	--background-light: rgb(255, 255, 255);
+	--active: rgb(225, 137, 59);
+	--disabled: rgb(155, 174, 200);
+	--calendar-weekend: rgb(255, 0, 0);
+	--button-foreground: rgb(255, 255, 255);
+	--button-normal: rgb(43, 144, 217);
+	--button-active: rgb(86, 167, 225);
+	--compose-button-fg: rgb(96, 105, 132);
+	*/
+}
+
+/*
+ * 上級者UIのdrawer（最左の投稿フォームがあるカラム）を固定
+ * 他カラムは横スクロール可能
+ *
+ */
+.column{
+	z-index: 0;
+}
+.drawer{
+	z-index: 1;
+	position: sticky;
+	left: 0;
+	overflow: hidden;
+	background-color: var(--background-drawer);
+}
+
+/* 通常UIのInstanceTicker表示（大）が領域をはみ出るので、収まるように調整してスクロールバー表示を抑制 */
+.getting-started__footer:after{
+	width: auto;
+}
+
+/* 各カラムのアイコン色（新着ありの時）指定 */
+.column-header.active .fa-home,
+.column-header__button.active .fa-bullhorn,
+.column-header.active .fa.fa-hashtag.column-header__icon.fa-fw,
+.column-header.active .fa-list-ul,
+.column-header.active .fa-bell,
+.column-header.active .fa-globe{
+	color: var(--active);
+}
+
+/* メンションリンク、ハッシュタグリンクの文字色指定 */
+a.status-link{
+	color: var(--active);
+}
+
+/* 自分がしたリアクションを強調表示 反映されるまでにラグが出ることがある */
+.reactions-bar__item.active{
+	background-color: var(--active);
+}
+.reactions-bar__item.active .reactions-bar__item__count{
+	color: var(--foreground);
+}
+
+/* 引用内のアバター表示をなくして、本文領域を拡張する */
+.quote-status .display-name{
+	padding: 0;
+}
+.quote-status .account__avatar{
+	display: none;
+}
+
+/* 絵文字（リアクションボタン上のものは除く）ホバー時に拡大表示する */
+.status__content__text .emojione:hover{
+	height: 4rem;
+	transition: transform .3s ease;
+}
+
+/* リアクションボタンの最大サイズをカラム幅に合わせる（最大サイズ拡張） */
+span.reactions-bar__item__emoji img.emojione.custom-emoji{
+	max-width: 100%;
+}
+
+/* リストカラム、サークルカラムの入力欄 */
+.column-inline-form label input{
+	color: var(--foreground);
+	background-color: var(--background-light);
+}
+
+/* アカウント情報のユーザメニュードロップダウン */
+.dropdown-menu,
+.dropdown-menu__item,
+.dropdown-menu__separator{
+	color: var(--foreground);
+	background: var(--background-light);
+}
+.dropdown-menu.bottom{
+	background-color: var(--background-light);
+}
+.dropdown-menu__item a{
+	color: var(--foreground);
+	background: var(--background-light);
+}
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover{
+	color: var(--foreground);
+	background: var(--active);
+}
+
+/* モーダルダイアログ */
+.block-modal,
+.mute-modal,
+.boost-modal,
+.confirmation-modal{
+	color: var(--foreground);
+	background: var(--background-light);
+}
+.block-modal__action-bar,
+.mute-modal__action-bar,
+.boost-modal__action-bar,
+.confirmation-modal__action-bar{
+	background: var(--background-light);
+}
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked:is(:hover,:focus-within):not(.react-toggle--disabled) .react-toggle-track{
+	background: var(--active);
+}
+.block-modal .setting-toggle__label,
+.mute-modal .setting-toggle__label{
+	color: var(--foreground);
+}
+.block-modal__container select,
+.confirmation-modal__container select,
+.mute-modal__container select,
+.report-modal__target select{
+	color: var(--foreground);
+	background-color: var(--background-light);
+}
+.status.light .display-name strong,
+.status.light .status__content{
+	color: var(--foreground);
+}
+
+/* 
+ * drawerカラムの調整
+ *
+ */
+/* 投稿フォームの調整 */
+.compose-form .autosuggest-textarea__textarea,
+.compose-form .compose-form__modifiers,
+.compose-form__poll-wrapper select,
+.compose-form .compose-form__datetime-wrapper input,
+.compose-form .compose-form__datetime-wrapper select,
+.compose-form .spoiler-input__input,
+.compose-form .autosuggest-input input{
+	color: var(--foreground);
+	background-color: var(--background-dark);
+}
+.compose-form__poll-wrapper select option:checked{
+	border-color: var(--active);
+}
+.compose-form .compose-form__buttons-wrapper,
+.privacy-dropdown__dropdown{
+	background: var(--background-light);
+}
+.privacy-dropdown__option,
+.privacy-dropdown__option__content,
+.privacy-dropdown__option__content strong{
+	color: var(--foreground);
+}
+.privacy-dropdown__option.active{
+	background-color: var(--active);
+}
+.icon-button,
+.icon-button.inverted,
+.text-icon-button,
+.character-counter{
+	color: var(--compose-button-fg);
+}
+.icon-button.inverted.active,
+.text-icon-button.active{
+	color: var(--active);
+}
+
+/* 検索マニュアル */
+.search-popout{
+	background: var(--background-light);
+	color: var(--foreground);
+}
+.search-popout em{
+	color: var(--disabled);
+}
+
+/* 公開日時、終了日時のカレンダーポップアップ ポップアップ内の時間選択部分のみ未対応 */
+.react-datepicker,
+.react-datepicker__header{
+	background: var(--background-light);
+	color: var(--foreground);
+}
+.react-datepicker__current-month{
+	color: var(--foreground);
+}
+.react-datepicker__day-name{
+	color: var(--foreground);
+}
+.react-datepicker__month{
+	background: var(--background-light);
+}
+.react-datepicker__day{
+	color: var(--foreground);
+}
+.react-datepicker__day:hover{
+	background-color: var(--active);
+}
+.react-datepicker__day--weekend{
+	color: var(--calendar-weekend);
+}
+.react-datepicker__day--disabled{
+	color: var(--disabled);
+}
+.react-datepicker__day--outside-month{
+	color: var(--disabled);
+}
+.react-datepicker__day--today{
+	color: var(--active);
+}
+.react-datepicker__day--selected{
+	background-color: var(--active);
+}
+
+/* 終了日時を迎えた場合のアクション選択 */
+.datetime-action .radio-button__input.checked{
+	border-color: var(--active);
+	background-color: var(--active);
+}
+
+/* アンケート項目削除のボタン（削除できない=表示なし　削除できる=表示あり） */
+.compose-form__poll-wrapper .icon-button.disabled{
+	display: none;
+}
+.compose-form__poll-wrapper .icon-button{
+	color: var(--foreground);
+}
+
+/* アンケート項目の追加、期限設定 */
+.poll__input:active,
+.poll__input:focus,
+.poll__input:hover,
+.poll__option input[type=text]:active,
+.poll__option input[type=text]:focus{
+	border-color: var(--active);
+}
+.compose-form__poll-wrapper .button.button-secondary{
+	color: var(--button-foreground);
+	border-color: var(--button-normal);
+    background-color: var(--button-normal);
+}
+.compose-form__poll-wrapper .button.button-secondary:active,
+.compose-form__poll-wrapper .button.button-secondary:focus,
+.compose-form__poll-wrapper .button.button-secondary:hover{
+	border-color: var(--button-active);
+	background-color: var(--button-active);
+    transition: all .2s ease-out;
+}
+
+/* 投稿フォーム下部のボタン・文字数表記 */
+.compose-form .compose-form__buttons-wrapper .icon-button,
+.compose-form .compose-form__buttons-wrapper .text-icon-button{
+	padding:0 3px;
+}
+
+/* サークル投稿のサークル選択 */
+.circle-dropdown,
+.circle-dropdown__menu{
+	background-color: var(--background-light);
+	color: var(--foreground);
+}
+.fa-user-circle:before{
+	color: var(--foreground);
+}
+
+/*
+ * 投稿フォームの高さを拡張
+ * アンケート（2項目）・CW・公開日時設定をすべて開いた際にスクロールバーを出さないサイズに調整
+ *
+ */
+.compose-form .autosuggest-textarea__textarea{
+	min-height: 180px;
+	max-height: 180px;
+}
+
+/*
+ * 時間表記を日時込みの絶対時間表記に変更
+ * デフォルト表記を消して（size0にして）、titleに指定されている絶対時間を表示する
+ * フォントサイズはデフォルト値的なものを記載。「情報ヘッダのフォントサイズ」で変更可能
+ */
+/* デフォルト表記を消す */
+time {
+	font-size: 0;
+}
+/* 公開期限 */
+.status__expiration-time time:before{
+	content: "exp: ";
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+.status__expiration-time time:after{
+	content: attr(title);
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+/* 投稿日時 */
+.status__relative-time time:before{
+	content: "post: ";
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+.status__relative-time time:after{
+	content: attr(title) "\A";
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+.detailed-status__datetime time:after{
+	content: attr(title);
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+
+/*
+ * 通知の表記変更
+ *
+ */
+/* 元投稿を投稿時間リンクを除いて非表示化してスリム化 */
+.notification .account__action-bar,
+.notification .status__expand,
+.notification .status__display-name,
+.notification .status__content,
+.notification .reactions-bar,
+.notification .status-card,
+.notification .status__action-bar,
+.notification .thumbnail-gallery,
+.notification .quote-status{
+	display:none;
+}
+.notification .status{
+	min-height: initial;
+}
+.notification__message{
+	margin-left: 40px;
+}
+.notification__favourite-icon-wrapper,
+.notification__reaction-icon-wrapper{
+	top: -18px;
+	left: -30px;
+	margin-top: 26px;
+}
+/* 絵文字を少し拡大 */
+.notification__reaction-icon-wrapper img.emojione:not(.reaction){
+	height: 1.5rem;
+}
+/* 通知があった日時を表示するが、表記がUTCである点に注意 */
+.notification__message>span:after{
+	display: block;
+	text-align: right;
+	content: attr(title) "(UTC)";
+	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+
+/*
+ * 投稿日時の表記変更
+ *   1段目：公開期限（日付付き絶対時間表記・ない場合は省略）
+ *   2段目：投稿日時（日付付き絶対時間表記）
+ *   3段目：アカウント表示名
+ *   4段目：アカウント名（リモートサーバの場合はドメインまで）   
+ *   5段目：InstanceTicker（表示する設定の場合・ない場合は省略）
+ */
+.status__info:not(:has(.dt-published)){
+	display: flex;
+	flex-wrap: wrap;
+}
+.status__info:not(:has(.dt-published)) .status__display-name,
+.status.light .display-name{
+	min-width: 100%;
+	padding-right: 0;
+}
+/* 表示名とアカウント名を行分離 */
+.status .display-name bdi:after{
+	white-space: pre;
+	content: "\A";
+}
+/* 公開期限、投稿日時表記を右揃えに */
+.status__relative-time,
+.status__expiration-time{
+	height: fit-content;
+	margin: 0 0 0 auto;
+}
+.status__expiration-time{
+	padding: 0 8px;
+}
+
+/* 
+ * 絵文字ピッカーの配色
+ *
+ */
+.emoji-picker-dropdown__menu,
+.emoji-mart-search,
+.emoji-mart-scroll,
+.dropdown-menu.dropdown-menu-reaction{
+	background: var(--background-dark);
+}
+.emoji-mart-anchors{
+	background-color: var(--background-light);
+}
+.emoji-mart-search input{
+	color: var(--foreground);
+	background-color: var(--background-light);
+}
+.emoji-mart-anchor-icon{
+	color: var(--foreground);
+}
+.emoji-mart-anchor-selected .emoji-mart-anchor-icon{
+	color: var(--active);
+}
+.emoji-mart-anchor-selected .emoji-mart-anchor-bar{
+	background: none;
+}
+.emoji-mart-category-label span{
+	color: var(--foreground);
+	background: var(--background-light);
+}
+.emoji-mart-emoji:hover{
+	background: var(--active);
+}
+
+/* 
+ * リアクションボタンホバー時のツールチップの配色
+ *
+ */
+.account-popup.dropdown-menu{
+	background: var(--background-light);
+}
+.account-popup__display-name__html{
+	color: var(--foreground);
+}
+
+/* for modern 各投稿のステータスアクションバーのずれを解消 */
+#mastodon .detailed-status__action-bar .icon-button,
+#mastodon .status__action-bar .icon-button,
+.public-layout .detailed-status__action-bar .icon-button,
+.public-layout .status__action-bar .icon-button{
+	padding:0 !important;
+}
