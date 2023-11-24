@@ -91,9 +91,17 @@ a.status-link{
 	transition: transform .3s ease;
 }
 
-/* リアクションボタンの最大サイズをカラム幅に合わせる（最大サイズ拡張） */
+/* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
+.emoji-reactions-bar.reactions-bar{
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
 span.reactions-bar__item__emoji img.emojione.custom-emoji{
-	max-width: 100%;
+	max-width: 300px;
+}
+span.reactions-bar__item__emoji img.emojione{
+	width: unset;
 }
 
 /* リストカラム、サークルカラムの入力欄 */
