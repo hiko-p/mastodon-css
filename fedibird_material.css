@@ -101,7 +101,8 @@ a.status-link{
 	max-width: 245px;
 }
 span.reactions-bar__item__emoji img.emojione.custom-emoji{
-	max-width: 245px;
+	aspect-ratio: auto;
+	max-width: 180px;
 }
 span.reactions-bar__item__emoji img.emojione{
 	width: unset;
