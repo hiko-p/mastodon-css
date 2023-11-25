@@ -112,8 +112,11 @@ a.status-link{
 	overflow-x: auto;
 	overflow-y: hidden;
 }
+.reactions-bar__item{
+	max-width: 245px;
+}
 span.reactions-bar__item__emoji img.emojione.custom-emoji{
-	max-width: 300px;
+	max-width: 245px;
 }
 span.reactions-bar__item__emoji img.emojione{
 	width: unset;
