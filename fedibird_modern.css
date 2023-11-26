@@ -104,11 +104,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 	aspect-ratio: auto;
 	max-width: 180px;
 }
-span.reactions-bar__item__emoji img.emojione{
+.reactions-bar__item__emoji img{
 	aspect-ratio: auto;
 	max-width: 180px;
-}
-span.reactions-bar__item__emoji{
 	width: unset;
 }
 
