@@ -332,19 +332,40 @@ time{
 	width: 60px;
 }
 .status-card:not(.expanded) .status-card__content{
-	padding: 1px;
-	height: 60px;	
+	padding: 1px 4px;
+	height: 60px;
+	width: 100%;
 }
 .status-card:not(.expanded) .status-card__host{
+	height: 14px;
+	font-size: 0;
+	width: 100%;
+	margin-bottom: 1px;
+	display: flex;
+}
+.status-card:not(.expanded)  .status-card__host span{
+	height: 12px;
 	font-size: 9px;
 	margin-bottom: 1px;
+}
+.status-card:not(.expanded)  time{
+	margin-left: auto;
 }
 .status-card:not(.expanded) time:after{
 	content: attr(title);
 	font-size: 0.6rem;
 }
 .status-card:not(.expanded) .status-card__title{
+	display: inherit;
+	text-overflow: ellipsis;
 	font-size: 12px;
+	white-space:  nowrap;
+}
+.status-card:not(.expanded) .status-card__author{
+	font-size: 12px;
+	margin-top: 1px;
+	margin-right: 1px;
+	text-align: right;
 }
 .status-card:not(.expanded) .status-card__description{
 	display: none;
@@ -358,21 +379,34 @@ time{
 	height: 60px;
 }
 .status-card.expanded .status-card__content{
-	padding: 1px;
-	height: 60px;	
+	padding: 1px 4px;
+	height: 60px;
+	width: 100%;
 }
 .status-card.expanded .status-card__host{
+	height: 14px;
+	font-size: 0;
+	width: 100%;
+	margin-bottom: 1px;
+	display: flex;
+}
+.status-card.expanded .status-card__host span{
 	height: 12px;
 	font-size: 9px;
 	margin-bottom: 1px;
+}
+.status-card.expanded time{
+	margin-left: auto;
 }
 .status-card.expanded time:after{
 	content: attr(title);
 	font-size: 0.6rem;
 }
 .status-card.expanded .status-card__title{
-	text-align: ellipsis;
+	display: inherit;
+	text-overflow: ellipsis;
 	font-size: 12px;
+	white-space: nowrap;
 }
 .status-card.expanded .status-card__author{
 	font-size: 12px;
@@ -396,4 +430,5 @@ time{
 /* 本文中の絵文字のみホバー時に拡大表示 */
 .status__content__text .emojione:hover{
 	height: 4rem;
+	transition: transform .3s ease;
 }
