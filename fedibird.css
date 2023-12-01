@@ -127,7 +127,7 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 
 /* リストカラム、サークルカラムの入力欄 */
 .column-inline-form label input{
-    color: var(--foreground);
+	color: var(--foreground);
 	background-color: var(--background-light);
 }
 
@@ -308,6 +308,12 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
     transition: all .2s ease-out;
 }
 
+/* 投稿フォーム下部のボタン・文字数表記 */
+.compose-form .compose-form__buttons-wrapper .icon-button,
+.compose-form .compose-form__buttons-wrapper .text-icon-button{
+	padding:0 3px;
+}
+
 /* サークル投稿のサークル選択 */
 .circle-dropdown,
 .circle-dropdown__menu{
@@ -375,7 +381,7 @@ time {
 .notification .status__action-bar,
 .notification .thumbnail-gallery,
 .notification .quote-status{
-	display:none;
+	display: none;
 }
 .notification .status{
 	min-height: initial;

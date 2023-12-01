@@ -78,10 +78,14 @@ a.status-link{
 }
 
 /* 引用内のアバター表示をなくして、本文領域を拡張する */
+.quote-status{
+	padding: 4px;
+}
 .quote-status .display-name{
 	padding: 0;
 }
-.quote-status .account__avatar{
+.quote-status .detailed-status__display-avatar,
+.quote-status .status__avatar{
 	display: none;
 }
 
@@ -99,6 +103,7 @@ a.status-link{
 }
 .reactions-bar__item{
 	max-width: 245px;
+	border-radius: 10px;
 }
 span.reactions-bar__item__emoji img.emojione.custom-emoji{
 	aspect-ratio: auto;
@@ -366,12 +371,13 @@ time {
 .notification .status__action-bar,
 .notification .thumbnail-gallery,
 .notification .quote-status{
-	display:none;
+	display: none;
 }
 .notification .status{
 	min-height: initial;
 }
 .notification__message{
+	font-size: calc(var(--info-font-size, 15px)*0.933);
 	margin-left: 40px;
 }
 .notification__favourite-icon-wrapper,

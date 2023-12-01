@@ -78,10 +78,12 @@ a.status-link{
 }
 
 /* 引用内のアバター表示をなくして、本文領域を拡張する */
-.quote-status .display-name{
-	padding: 0;
+div.quote-status>div.status__info>a.status__display-name>.display-name, div.status__info:first-child>a:first-child>span:nth-child(2),
+div.quote-status>div.status__content.status__content--with-action, div.status__content:nth-child(2){
+	padding: 4px;
 }
-.quote-status .account__avatar{
+.quote-status .detailed-status__display-avatar,
+.quote-status .status__avatar{
 	display: none;
 }
 
@@ -366,7 +368,7 @@ time {
 .notification .status__action-bar,
 .notification .thumbnail-gallery,
 .notification .quote-status{
-	display:none;
+	display: none;
 }
 .notification .status{
 	min-height: initial;
