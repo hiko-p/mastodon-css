@@ -78,6 +78,10 @@
 .column-header.active .fa-globe{
 	color: var(--active);
 }
+.icon-with-badge__badge{
+	background: var(--active);
+	color: var(--foreground);
+}
 
 /* メンションリンク、ハッシュタグリンクの文字色指定 */
 a.status-link{
