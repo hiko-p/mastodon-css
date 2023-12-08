@@ -64,6 +64,25 @@ a.status-link,
 	color: var(--active);
 }
 
+/* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
+.reactions-bar{
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.reactions-bar__item{
+	max-width: 245px;
+}
+span.reactions-bar__item__emoji img.emojione.custom-emoji{
+	aspect-ratio: auto;
+	max-width: 180px;
+}
+.reactions-bar__item__emoji img{
+	aspect-ratio: auto;
+	max-width: 180px;
+	width: unset;
+}
+
 /* モーダルダイアログ */
 .block-modal,
 .mute-modal,
