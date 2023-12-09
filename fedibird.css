@@ -49,6 +49,61 @@
 }
 
 /*
+ * フォント変更用テンプレート
+ *
+ */
+/* mastodon-font-sans-serif */
+body,
+body.system-font,
+.react-datepicker,
+.character-counter,
+.rich-formatting,
+.information-board__section,
+.landing-page li,
+.landing-page p,
+.landing-page h1 small{
+	font-family: "mastodon-font-sans-serif",sans-serif;
+}
+
+/* mastodon-font-monospace */
+code,
+.flash-message .oauth-code,
+.form_admin_settings_closed_registrations_message textarea,
+.form_admin_settings_custom_css textarea,
+.form_admin_settings_site_description textarea,
+.form_admin_settings_site_extended_description textarea,
+.form_admin_settings_site_short_description textarea,
+.form_admin_settings_site_terms textarea,
+.input-copy input[type=text],
+.embed-modal .embed-modal__container .embed-modal__html,
+samp{
+	font-family: "mastodon-font-monospace",monospace;
+}
+
+/* mastodon-font-display */
+.logo-container h1 a,
+.public-layout .public-account-header__tabs__tabs .counter .counter-number,
+.rich-formatting h1,
+.rich-formatting h2,
+.rich-formatting h3,
+.rich-formatting h4,
+.rich-formatting h5,
+.rich-formatting h6,
+.information-board__section strong,
+.information-board .panel .panel-header,
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4,
+.landing-page h5,
+.landing-page h6,
+.landing .hero-widget__counter strong,
+.dashboard__counters__num,
+.dashboard__counters__text{
+	font-family: mastodon-font-display,sans-serif;
+}
+
+/*
  * 上級者UIのdrawer（最左の投稿フォームがあるカラム）を固定
  * 他カラムは横スクロール可能
  *
