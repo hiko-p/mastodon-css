@@ -9,6 +9,7 @@
 	--background-drawer: rgb(24, 26, 27);
 	--background-dark: rgb(24, 26, 27);
 	--background-light: rgb(35, 38, 40);
+	--article-border: rgb(57, 63, 79);
 	--active: rgb(225, 137, 59);
 	--disabled: rgb(155, 174, 200);
 	--calendar-weekend: rgb(255, 0, 0);
@@ -23,6 +24,7 @@
 	--background-drawer: rgb(239, 243, 245);
 	--background-dark: rgb(255, 255, 255);
 	--background-light: rgb(255, 255, 255);
+	--article-border: rgb(192, 205, 217);
 	--active: rgb(225, 137, 59);
 	--disabled: rgb(155, 174, 200);
 	--calendar-weekend: rgb(255, 0, 0);
@@ -417,20 +419,15 @@ time {
  * 通知の表記変更
  *
  */
-/* 元投稿を投稿時間リンクを除いて非表示化してスリム化 */
-.notification .account__action-bar,
-.notification .status__expand,
-.notification .status__display-name,
-.notification .status__content,
-.notification .reactions-bar,
-.notification .status-card,
-.notification .status__action-bar,
-.notification .thumbnail-gallery,
-.notification .quote-status{
-	display: none;
+/* 通知欄ホバー時に元投稿を表示し、通常時は隠すことでスリム化 */
+.notification div[tabindex="-1"]{
+	max-height: 0;
+	border-bottom: 1px solid var(--article-border);
+	transition: 500ms max-height ease;
+	overflow: hidden;
 }
-.notification .status{
-	min-height: initial;
+.notification:hover div[tabindex="-1"]{
+	max-height: 2000px;
 }
 .notification__message{
 	margin-left: 40px;
