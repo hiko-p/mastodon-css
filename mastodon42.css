@@ -265,22 +265,28 @@ time{
 /* 通知欄ホバー時に元投稿を表示し、通常時は隠すことでスリム化 */
 .notification div[tabindex="-1"]{
 	max-height: 0;
+	padding-bottom: 10px;
 	border-bottom: 1px solid var(--article-border);
 	transition: 500ms max-height ease;
+	transition: 0ms border ease;
 	overflow: hidden;
 }
 .notification:hover div[tabindex="-1"]{
 	max-height: 2000px;
+	border: none;
 }
-.notification .status__info{
-	padding-bottom: 0;
+/* 絵文字（アイコン）を位置調整して少し拡大 */
+.notification__message .fa-retweet:before,
+.notification__message .fa-star:before,
+.notification__message .fa-user-plus:before{
+	font-size: 1.5rem;
 }
 /* フォロー通知・ブースト通知・お気に入り通知の日時表記 */
 .notification__message > span{
 	width: 100%;
 }
+/* 通知があった日時を表示するが、表記がUTCである点に注意 */
 .notification__message > span:after{
-	/* 通知があった日時を表示するが、表記がUTCである点に注意 */
 	display: block;
 	text-align: right;
 	content: attr(title) "(UTC)";

@@ -422,25 +422,46 @@ time {
 /* 通知欄ホバー時に元投稿を表示し、通常時は隠すことでスリム化 */
 .notification div[tabindex="-1"]{
 	max-height: 0;
+	padding-bottom: 10px;
 	border-bottom: 1px solid var(--article-border);
 	transition: 500ms max-height ease;
+	transition: 0ms border ease;
 	overflow: hidden;
 }
 .notification:hover div[tabindex="-1"]{
 	max-height: 2000px;
+	border: none;
 }
+/* 通知内のレイアウト調整 */
 .notification__message{
 	margin-left: 40px;
 }
+/* 絵文字（アイコン）を位置調整して少し拡大 */
 .notification__favourite-icon-wrapper,
 .notification__reaction-icon-wrapper{
 	top: -18px;
 	left: -30px;
 	margin-top: 26px;
 }
-/* 絵文字を少し拡大 */
+.notification__message .fa-retweet:before,
+.notification__message .fa-star:before,
+.notification__message .fa-user-plus:before{
+	font-size: 1.5rem;
+}
 .notification__reaction-icon-wrapper img.emojione:not(.reaction){
 	height: 1.5rem;
+}
+/* 通知内InstanceTickerの調整 */
+.notification__message:has(.wide) span span{
+	margin-top: 5px;
+}
+.notification__message span{
+	display: block !important; 
+	width: 100%;
+}
+.notification__display-name:before{
+	display: block !important;
+	width: 100%;
 }
 /* 通知があった日時を表示するが、表記がUTCである点に注意 */
 .notification__message>span:after{
