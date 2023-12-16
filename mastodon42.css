@@ -278,7 +278,8 @@ time{
 /* 絵文字（アイコン）を位置調整して少し拡大 */
 .notification__message .fa-retweet:before,
 .notification__message .fa-star:before,
-.notification__message .fa-user-plus:before{
+.notification__message .fa-user-plus:before,
+.notification__message .fa-tasks:before{
 	font-size: 1.5rem;
 }
 /* フォロー通知・ブースト通知・お気に入り通知の日時表記 */

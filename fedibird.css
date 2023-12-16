@@ -459,7 +459,8 @@ time {
 }
 .notification__message .fa-retweet:before,
 .notification__message .fa-star:before,
-.notification__message .fa-user-plus:before{
+.notification__message .fa-user-plus:before,
+.notification__message .fa-tasks:before{
 	font-size: 1.5rem;
 }
 .notification__reaction-icon-wrapper img.emojione:not(.reaction){
