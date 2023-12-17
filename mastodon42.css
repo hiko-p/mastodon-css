@@ -86,37 +86,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 }
 
 /* モーダルダイアログ */
-.block-modal,
-.mute-modal,
-.boost-modal,
-.confirmation-modal{
-	color: var(--foreground);
-	background: var(--background-light);	
-}
-.block-modal__action-bar,
-.mute-modal__action-bar,
-.boost-modal__action-bar,
-.confirmation-modal__action-bar{
-	background: var(--background-light);
-}
 .react-toggle--checked .react-toggle-track,
 .react-toggle--checked:is(:hover,:focus-within):not(.react-toggle--disabled) .react-toggle-track{
 	background: var(--active);
-}
-.block-modal .setting-toggle__label,
-.mute-modal .setting-toggle__label{
-	color: var(--foreground);
-}
-.block-modal__container select,
-.confirmation-modal__container select,
-.mute-modal__container select,
-.report-modal__target select{
-	color: var(--foreground);
-	background-color: var(--background-light);
-}
-.status.light .display-name strong,
-.status.light .status__content{
-	color: var(--foreground);
 }
 
 /* 
