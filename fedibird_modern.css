@@ -204,7 +204,8 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .block-modal,
 .mute-modal,
 .boost-modal,
-.confirmation-modal{
+.confirmation-modal,
+.report-modal{
 	color: var(--foreground);
 	background: var(--background-light);
 }
@@ -219,7 +220,8 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 	background: var(--active);
 }
 .block-modal .setting-toggle__label,
-.mute-modal .setting-toggle__label{
+.mute-modal .setting-toggle__label,
+.report-modal__comment .setting-toggle__label{
 	color: var(--foreground);
 }
 .block-modal__container select,
@@ -232,6 +234,16 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .status.light .display-name strong,
 .status.light .status__content{
 	color: var(--foreground);
+}
+.focal-point-modal__content .status__content,
+.focal-point-modal__content .status__content p,
+.report-modal__statuses .status__content,
+.report-modal__statuses .status__content p{
+	color: var(--foreground);
+}
+.report-modal__comment .setting-text{
+	color: var(--foreground);
+	background-color: var(--background-light);
 }
 
 /* 
