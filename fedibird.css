@@ -153,7 +153,7 @@ a.status-link{
 .reactions-bar__item.active .reactions-bar__item__count{
 	color: var(--foreground);
 }
-.icon-button.active{
+.status__action-bar .icon-button.active{
 	color: var(--active);
 }
 
