@@ -153,6 +153,9 @@ a.status-link{
 .reactions-bar__item.active .reactions-bar__item__count{
 	color: var(--foreground);
 }
+.icon-button.active{
+	color: var(--active);
+}
 
 /* 引用内のアバター表示をなくして、本文領域を拡張する */
 .quote-status .display-name{

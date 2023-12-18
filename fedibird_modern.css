@@ -137,6 +137,9 @@ a.status-link{
 .reactions-bar__item.active .reactions-bar__item__count{
 	color: var(--foreground);
 }
+.icon-button.active{
+	color: var(--active);
+}
 
 /* 引用内のアバター表示をなくして、本文領域を拡張する */
 div.quote-status>div.status__info>a.status__display-name>.display-name, div.status__info:first-child>a:first-child>span:nth-child(2),
