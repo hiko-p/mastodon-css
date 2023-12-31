@@ -140,6 +140,9 @@ a.status-link{
 .status__action-bar .icon-button.active{
 	color: var(--active);
 }
+.icon-button.active .fa-retweet{
+	filter: invert(100%);
+}
 
 /* 引用内のアバター表示をなくして、本文領域を拡張する */
 .quote-status{
