@@ -157,7 +157,6 @@ div.quote-status>div.status__content.status__content--with-action, div.status__c
 /* 絵文字（リアクションボタン上のものは除く）ホバー時に拡大表示する */
 .status__content__text .emojione:hover{
 	height: 4rem;
-	transition: transform .3s ease;
 }
 
 /* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
