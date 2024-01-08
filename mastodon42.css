@@ -443,5 +443,4 @@ time{
 /* 本文中の絵文字のみホバー時に拡大表示 */
 .status__content__text .emojione:hover{
 	height: 4rem;
-	transition: transform .3s ease;
 }
