@@ -224,7 +224,10 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .mute-modal,
 .boost-modal,
 .confirmation-modal,
-.report-modal{
+.report-modal,
+.actions-modal .status,
+.reaction-modal .status
+{
 	color: var(--foreground);
 	background: var(--background-light);
 }
@@ -278,7 +281,7 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .compose-form .spoiler-input__input,
 .compose-form .autosuggest-input input{
 	color: var(--foreground);
-	background-color: var(--background-dark);
+	background-color: var(--background-light);
 }
 .compose-form__poll-wrapper select option:checked{
 	border-color: var(--active);
@@ -545,7 +548,7 @@ time {
 .emoji-mart-search,
 .emoji-mart-scroll,
 .dropdown-menu.dropdown-menu-reaction{
-	background: var(--background-dark);
+	background: var(--background-light);
 }
 .emoji-mart-anchors{
 	background-color: var(--background-light);
