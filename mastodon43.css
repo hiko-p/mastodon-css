@@ -107,6 +107,10 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .react-toggle--checked:is(:hover,:focus-within):not(.react-toggle--disabled) .react-toggle-track{
 	background: var(--active);
 }
+.embed-modal{
+	color: var(--foreground);
+	background: var(--background-light);
+}
 
 /* 
  * drawerカラムの調整
