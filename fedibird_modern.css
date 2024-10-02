@@ -487,11 +487,18 @@ time {
 	width: 100%;
 }
 /* 通知があった日時を表示するが、表記がUTCである点に注意 */
-.notification__message>span:after{
+.notification__message:not(:has(.translate)) > span:after{
 	display: block;
 	text-align: right;
 	content: attr(title) "(UTC)";
 	font-size: calc(var(--info-font-size, 15px)*0.933);
+}
+/* フォロー通知対応 */
+.notification__avatar-wrapper{
+	left: -30px;
+}
+.notification__followed_message{
+	margin-left: 30px;
 }
 
 /*
