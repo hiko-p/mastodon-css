@@ -491,7 +491,7 @@ time {
 	width: 100%;
 }
 /* 通知があった日時を表示するが、表記がUTCである点に注意 */
-.notification__message > span:has([title]):after{
+.notification__message:has([title]) > span:after{
 	display: block;
 	text-align: right;
 	content: attr(title) "(UTC)";
