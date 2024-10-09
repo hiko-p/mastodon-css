@@ -503,10 +503,6 @@ time {
 .notification__followed_message{
 	margin-left: 30px;
 }
-/* フォロー通知メッセージがない場合 */
-.notification__message:not(:has(.notification__followed_message)) > .notification__avatar-wrapper{
-	display: none;
-}
 
 /*
  * 投稿日時の表記変更
