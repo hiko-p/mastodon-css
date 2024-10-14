@@ -58,6 +58,14 @@
 	color: var(--active);
 }
 
+/* カラムのフィルターバー選択項目の色指定 */
+.account__section-headline a.active,
+.account__section-headline button.active,
+.notification__filter-bar a.active,
+.notification__filter-bar button.active{
+	color:var(--active);
+}
+
 /* メンションリンク、ハッシュタグリンクの文字色指定 */
 .edit-indicator__content a.unhandled-link,
 .reply-indicator__content a.unhandled-link,
@@ -267,6 +275,13 @@ time{
 }
 .conversation__unread{
 	background: var(--active);
+}
+
+/* 相互フォロー中ボタン */
+.button.button-secondary{
+	color: var(--foreground);
+	background: var(--active);
+	border-color: var(--active);
 }
 
 /* 
