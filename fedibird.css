@@ -141,6 +141,13 @@ samp{
 	color: var(--foreground);
 }
 
+/* 通知等の新着表示（左側の表示色） */
+.mini-status__wrapper.unread:before,
+.notification.unread:before,
+.status__wrapper.unread:before{
+	border-color: var(--active);
+}
+
 /* メンションリンク、ハッシュタグリンクの文字色指定 */
 a.status-link{
 	color: var(--active);
