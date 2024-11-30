@@ -591,3 +591,8 @@ time {
 .public-layout .status__action-bar .icon-button{
 	padding:0 !important;
 }
+
+/* グループヘッダのリンクもろもろ */
+.group__header__content a{
+	color: var(--active);
+}

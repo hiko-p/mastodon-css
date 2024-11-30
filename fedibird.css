@@ -597,3 +597,8 @@ time {
 .account-popup__display-name__html{
 	color: var(--foreground);
 }
+
+/* グループヘッダのリンクもろもろ */
+.group__header__content a{
+	color: var(--active);
+}

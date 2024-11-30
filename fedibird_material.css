@@ -605,3 +605,8 @@ time {
 .status__action-bar-dropdown .icon-button:has(.fa-ellipsis-h){
 	padding: 8px 3px;
 }
+
+/* グループヘッダのリンクもろもろ */
+.group__header__content a{
+	color: var(--active);
+}
