@@ -3,23 +3,23 @@
  *
  */
 /* 色指定 */
-:root{
-	/* for ダーク or ハイコントラスト */
-	--foreground: rgb(255, 255, 255);
-	--background-drawer: rgb(24, 26, 27);
-	--background-dark: rgb(24, 26, 27);
-	--background-light: rgb(35, 38, 40);
-	--article-border: rgb(57, 63, 79);
-	--active: rgb(225, 137, 59);
-	--disabled: rgb(155, 174, 200);
-	--calendar-weekend: rgb(255, 0, 0);
-	--button-foreground: rgb(255, 255, 255);
-	--button-normal: rgb(43, 144, 217);
-	--button-active: rgb(86, 167, 225);
-	--compose-button-fg: rgb(96, 105, 132);
+:root {
+  /* for ダーク or ハイコントラスト */
+  --foreground: rgb(255, 255, 255);
+  --background-drawer: rgb(24, 26, 27);
+  --background-dark: rgb(24, 26, 27);
+  --background-light: rgb(35, 38, 40);
+  --article-border: rgb(57, 63, 79);
+  --active: rgb(225, 137, 59);
+  --disabled: rgb(155, 174, 200);
+  --calendar-weekend: rgb(255, 0, 0);
+  --button-foreground: rgb(255, 255, 255);
+  --button-normal: rgb(43, 144, 217);
+  --button-active: rgb(86, 167, 225);
+  --compose-button-fg: rgb(96, 105, 132);
 
-	/* for ライト */
-	/*
+  /* for ライト */
+  /*
 	--foreground: rgb(0, 0, 0);
 	--background-drawer: rgb(239, 243, 245);
 	--background-dark: rgb(255, 255, 255);
@@ -48,8 +48,8 @@ body.system-font,
 .information-board__section,
 .landing-page li,
 .landing-page p,
-.landing-page h1 small{
-	font-family: "mastodon-font-sans-serif",sans-serif;
+.landing-page h1 small {
+  font-family: "mastodon-font-sans-serif", sans-serif;
 }
 
 /* mastodon-font-monospace */
@@ -61,10 +61,10 @@ code,
 .form_admin_settings_site_extended_description textarea,
 .form_admin_settings_site_short_description textarea,
 .form_admin_settings_site_terms textarea,
-.input-copy input[type=text],
+.input-copy input[type="text"],
 .embed-modal .embed-modal__container .embed-modal__html,
-samp{
-	font-family: "mastodon-font-monospace",monospace;
+samp {
+  font-family: "mastodon-font-monospace", monospace;
 }
 
 /* mastodon-font-display */
@@ -86,8 +86,8 @@ samp{
 .landing-page h6,
 .landing .hero-widget__counter strong,
 .dashboard__counters__num,
-.dashboard__counters__text{
-	font-family: mastodon-font-display,sans-serif;
+.dashboard__counters__text {
+  font-family: mastodon-font-display, sans-serif;
 }
 
 /*
@@ -95,20 +95,20 @@ samp{
  * 他カラムは横スクロール可能
  *
  */
-.column{
-	z-index: 0;
+.column {
+  z-index: 0;
 }
-.drawer{
-	z-index: 1;
-	position: sticky;
-	left: 0;
-	overflow: hidden;
-	background-color: var(--background-drawer);
+.drawer {
+  z-index: 1;
+  position: sticky;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--background-drawer);
 }
 
 /* 通常UIのInstanceTicker表示（大）が領域をはみ出るので、収まるように調整してスクロールバー表示を抑制 */
-.getting-started__footer:after{
-	width: auto;
+.getting-started__footer:after {
+  width: auto;
 }
 
 /* 各カラムのアイコン色（新着ありの時）指定 */
@@ -117,99 +117,101 @@ samp{
 .column-header.active .fa.fa-hashtag.column-header__icon.fa-fw,
 .column-header.active .fa-list-ul,
 .column-header.active .fa-bell,
-.column-header.active .fa-globe{
-	color: var(--active);
+.column-header.active .fa-globe {
+  color: var(--active);
 }
-.icon-with-badge__badge{
-	background: var(--active);
-	color: var(--foreground);
+.icon-with-badge__badge {
+  background: var(--active);
+  color: var(--foreground);
 }
 
 /* 通知等の新着表示（左側の表示色） */
 .mini-status__wrapper.unread:before,
 .notification.unread:before,
-.status__wrapper.unread:before{
-	border-color: var(--active);
+.status__wrapper.unread:before {
+  border-color: var(--active);
 }
 
 /* メンションリンク、ハッシュタグリンクの文字色指定 */
-a.status-link{
-	color: var(--active);
+a.status-link {
+  color: var(--active);
 }
 
 /* 自分がしたリアクションを強調表示 反映されるまでにラグが出ることがある */
-.reactions-bar__item.active{
-	background-color: var(--active);
+.reactions-bar__item.active {
+  background-color: var(--active);
 }
-.reactions-bar__item.active .reactions-bar__item__count{
-	color: var(--foreground);
+.reactions-bar__item.active .reactions-bar__item__count {
+  color: var(--foreground);
 }
-.status__action-bar .icon-button.active{
-	color: var(--active);
+.status__action-bar .icon-button.active {
+  color: var(--active);
 }
-.icon-button.active .fa-retweet{
-	filter: invert(100%);
+.icon-button.active .fa-retweet {
+  filter: invert(100%);
 }
 
 /* 引用内のアバター表示をなくして、本文領域を拡張する */
-div.quote-status>div.status__info>a.status__display-name>.display-name, div.status__info:first-child>a:first-child>span:nth-child(2),
-div.quote-status>div.status__content.status__content--with-action, div.status__content:nth-child(2){
-	padding: 4px;
+div.quote-status > div.status__info > a.status__display-name > .display-name,
+div.status__info:first-child > a:first-child > span:nth-child(2),
+div.quote-status > div.status__content.status__content--with-action,
+div.status__content:nth-child(2) {
+  padding: 4px;
 }
 .quote-status .detailed-status__display-avatar,
-.quote-status .status__avatar{
-	display: none;
+.quote-status .status__avatar {
+  display: none;
 }
 
 /* 絵文字（リアクションボタン上のものは除く）ホバー時に拡大表示する */
-.status__content__text .emojione:hover{
-	height: 4rem;
+.status__content__text .emojione:hover {
+  height: 4rem;
 }
 
 /* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
-.reactions-bar{
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
+.reactions-bar {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
-.reactions-bar__item{
-	max-width: 245px;
+.reactions-bar__item {
+  max-width: 245px;
 }
-span.reactions-bar__item__emoji img.emojione.custom-emoji{
-	aspect-ratio: auto;
-	max-width: 180px;
+span.reactions-bar__item__emoji img.emojione.custom-emoji {
+  aspect-ratio: auto;
+  max-width: 180px;
 }
-.reactions-bar__item__emoji img{
-	aspect-ratio: auto;
-	max-width: 180px;
-	width: unset;
+.reactions-bar__item__emoji img {
+  aspect-ratio: auto;
+  max-width: 180px;
+  width: unset;
 }
 
 /* リストカラム、サークルカラムの入力欄 */
-.column-inline-form label input{
-	color: var(--foreground);
-	background-color: var(--background-light);
+.column-inline-form label input {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
 
 /* アカウント情報のユーザメニュードロップダウン */
 .dropdown-menu,
 .dropdown-menu__item,
-.dropdown-menu__separator{
-	color: var(--foreground);
-	background: var(--background-light);
+.dropdown-menu__separator {
+  color: var(--foreground);
+  background: var(--background-light);
 }
-.dropdown-menu.bottom{
-	background-color: var(--background-light);
+.dropdown-menu.bottom {
+  background-color: var(--background-light);
 }
-.dropdown-menu__item a{
-	color: var(--foreground);
-	background: var(--background-light);
+.dropdown-menu__item a {
+  color: var(--foreground);
+  background: var(--background-light);
 }
 .dropdown-menu__item a:active,
 .dropdown-menu__item a:focus,
-.dropdown-menu__item a:hover{
-	color: var(--foreground);
-	background: var(--active);
+.dropdown-menu__item a:hover {
+  color: var(--foreground);
+  background: var(--active);
 }
 
 /* モーダルダイアログ */
@@ -219,46 +221,46 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .confirmation-modal,
 .report-modal,
 .actions-modal .status,
-.reaction-modal .status
-{
-	color: var(--foreground);
-	background: var(--background-light);
+.reaction-modal .status {
+  color: var(--foreground);
+  background: var(--background-light);
 }
 .block-modal__action-bar,
 .mute-modal__action-bar,
 .boost-modal__action-bar,
-.confirmation-modal__action-bar{
-	background: var(--background-light);
+.confirmation-modal__action-bar {
+  background: var(--background-light);
 }
 .react-toggle--checked .react-toggle-track,
-.react-toggle--checked:is(:hover,:focus-within):not(.react-toggle--disabled) .react-toggle-track{
-	background: var(--active);
+.react-toggle--checked:is(:hover, :focus-within):not(.react-toggle--disabled)
+  .react-toggle-track {
+  background: var(--active);
 }
 .block-modal .setting-toggle__label,
 .mute-modal .setting-toggle__label,
-.report-modal__comment .setting-toggle__label{
-	color: var(--foreground);
+.report-modal__comment .setting-toggle__label {
+  color: var(--foreground);
 }
 .block-modal__container select,
 .confirmation-modal__container select,
 .mute-modal__container select,
-.report-modal__target select{
-	color: var(--foreground);
-	background-color: var(--background-light);
+.report-modal__target select {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
 .status.light .display-name strong,
-.status.light .status__content{
-	color: var(--foreground);
+.status.light .status__content {
+  color: var(--foreground);
 }
 .focal-point-modal__content .status__content,
 .focal-point-modal__content .status__content p,
 .report-modal__statuses .status__content,
-.report-modal__statuses .status__content p{
-	color: var(--foreground);
+.report-modal__statuses .status__content p {
+  color: var(--foreground);
 }
-.report-modal__comment .setting-text{
-	color: var(--foreground);
-	background-color: var(--background-light);
+.report-modal__comment .setting-text {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
 
 /* 
@@ -272,131 +274,131 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .compose-form .compose-form__datetime-wrapper input,
 .compose-form .compose-form__datetime-wrapper select,
 .compose-form .spoiler-input__input,
-.compose-form .autosuggest-input input{
-	color: var(--foreground);
-	background-color: var(--background-light);
+.compose-form .autosuggest-input input {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
-.compose-form__poll-wrapper select option:checked{
-	border-color: var(--active);
+.compose-form__poll-wrapper select option:checked {
+  border-color: var(--active);
 }
 .compose-form .compose-form__buttons-wrapper,
-.privacy-dropdown__dropdown{
-	background: var(--background-light);
+.privacy-dropdown__dropdown {
+  background: var(--background-light);
 }
 .privacy-dropdown__option,
 .privacy-dropdown__option__content,
-.privacy-dropdown__option__content strong{
-	color: var(--foreground);
+.privacy-dropdown__option__content strong {
+  color: var(--foreground);
 }
-.privacy-dropdown__option.active{
-	background-color: var(--active);
+.privacy-dropdown__option.active {
+  background-color: var(--active);
 }
 .icon-button,
 .icon-button.inverted,
 .text-icon-button,
-.character-counter{
-	color: var(--compose-button-fg);
+.character-counter {
+  color: var(--compose-button-fg);
 }
 .icon-button.inverted.active,
-.text-icon-button.active{
-	color: var(--active);
+.text-icon-button.active {
+  color: var(--active);
 }
 
 /* 検索マニュアル */
-.search-popout{
-	background: var(--background-light);
-	color: var(--foreground);
+.search-popout {
+  background: var(--background-light);
+  color: var(--foreground);
 }
-.search-popout em{
-	color: var(--disabled);
+.search-popout em {
+  color: var(--disabled);
 }
 
 /* 公開日時、終了日時のカレンダーポップアップ ポップアップ内の時間選択部分のみ未対応 */
 .react-datepicker,
-.react-datepicker__header{
-	background: var(--background-light);
-	color: var(--foreground);
+.react-datepicker__header {
+  background: var(--background-light);
+  color: var(--foreground);
 }
-.react-datepicker__current-month{
-	color: var(--foreground);
+.react-datepicker__current-month {
+  color: var(--foreground);
 }
-.react-datepicker__day-name{
-	color: var(--foreground);
+.react-datepicker__day-name {
+  color: var(--foreground);
 }
-.react-datepicker__month{
-	background: var(--background-light);
+.react-datepicker__month {
+  background: var(--background-light);
 }
-.react-datepicker__day{
-	color: var(--foreground);
+.react-datepicker__day {
+  color: var(--foreground);
 }
-.react-datepicker__day:hover{
-	background-color: var(--active);
+.react-datepicker__day:hover {
+  background-color: var(--active);
 }
-.react-datepicker__day--weekend{
-	color: var(--calendar-weekend);
+.react-datepicker__day--weekend {
+  color: var(--calendar-weekend);
 }
-.react-datepicker__day--disabled{
-	color: var(--disabled);
+.react-datepicker__day--disabled {
+  color: var(--disabled);
 }
-.react-datepicker__day--outside-month{
-	color: var(--disabled);
+.react-datepicker__day--outside-month {
+  color: var(--disabled);
 }
-.react-datepicker__day--today{
-	color: var(--active);
+.react-datepicker__day--today {
+  color: var(--active);
 }
-.react-datepicker__day--selected{
-	background-color: var(--active);
+.react-datepicker__day--selected {
+  background-color: var(--active);
 }
 
 /* 終了日時を迎えた場合のアクション選択 */
-.datetime-action .radio-button__input.checked{
-	border-color: var(--active);
-	background-color: var(--active);
+.datetime-action .radio-button__input.checked {
+  border-color: var(--active);
+  background-color: var(--active);
 }
 
 /* アンケート項目削除のボタン（削除できない=表示なし　削除できる=表示あり） */
-.compose-form__poll-wrapper .icon-button.disabled{
-	display: none;
+.compose-form__poll-wrapper .icon-button.disabled {
+  display: none;
 }
-.compose-form__poll-wrapper .icon-button{
-	color: var(--foreground);
+.compose-form__poll-wrapper .icon-button {
+  color: var(--foreground);
 }
 
 /* アンケート項目の追加、期限設定 */
 .poll__input:active,
 .poll__input:focus,
 .poll__input:hover,
-.poll__option input[type=text]:active,
-.poll__option input[type=text]:focus{
-	border-color: var(--active);
+.poll__option input[type="text"]:active,
+.poll__option input[type="text"]:focus {
+  border-color: var(--active);
 }
-.compose-form__poll-wrapper .button.button-secondary{
-	color: var(--button-foreground);
-	border-color: var(--button-normal);
-    background-color: var(--button-normal);
+.compose-form__poll-wrapper .button.button-secondary {
+  color: var(--button-foreground);
+  border-color: var(--button-normal);
+  background-color: var(--button-normal);
 }
 .compose-form__poll-wrapper .button.button-secondary:active,
 .compose-form__poll-wrapper .button.button-secondary:focus,
-.compose-form__poll-wrapper .button.button-secondary:hover{
-	border-color: var(--button-active);
-	background-color: var(--button-active);
-    transition: all .2s ease-out;
+.compose-form__poll-wrapper .button.button-secondary:hover {
+  border-color: var(--button-active);
+  background-color: var(--button-active);
+  transition: all 0.2s ease-out;
 }
 
 /* 投稿フォーム下部のボタン・文字数表記 */
 .compose-form .compose-form__buttons-wrapper .icon-button,
-.compose-form .compose-form__buttons-wrapper .text-icon-button{
-	padding:0 3px;
+.compose-form .compose-form__buttons-wrapper .text-icon-button {
+  padding: 0 3px;
 }
 
 /* サークル投稿のサークル選択 */
 .circle-dropdown,
-.circle-dropdown__menu{
-	background-color: var(--background-light);
-	color: var(--foreground);
+.circle-dropdown__menu {
+  background-color: var(--background-light);
+  color: var(--foreground);
 }
-.fa-user-circle:before{
-	color: var(--foreground);
+.fa-user-circle:before {
+  color: var(--foreground);
 }
 
 /*
@@ -405,9 +407,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
  * 最大サイズを指定する場合は、以下2つのプロパティを同じ値に設定してください。
  *
  */
-.compose-form .autosuggest-textarea__textarea{
-	min-height: 180px;
-	max-height: 180px;
+.compose-form .autosuggest-textarea__textarea {
+  min-height: 180px;
+  max-height: 180px;
 }
 
 /*
@@ -417,29 +419,29 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
  */
 /* デフォルト表記を消す */
 time {
-	font-size: 0;
+  font-size: 0;
 }
 /* 公開期限 */
-.status__expiration-time time:before{
-	content: "exp: ";
-	font-size: calc(var(--info-font-size, 15px)*0.933);
+.status__expiration-time time:before {
+  content: "exp: ";
+  font-size: calc(var(--info-font-size, 15px) * 0.933);
 }
-.status__expiration-time time:after{
-	content: attr(title);
-	font-size: calc(var(--info-font-size, 15px)*0.933);
+.status__expiration-time time:after {
+  content: attr(title);
+  font-size: calc(var(--info-font-size, 15px) * 0.933);
 }
 /* 投稿日時 */
-.status__relative-time time:before{
-	content: "post: ";
-	font-size: calc(var(--info-font-size, 15px)*0.933);
+.status__relative-time time:before {
+  content: "post: ";
+  font-size: calc(var(--info-font-size, 15px) * 0.933);
 }
-.status__relative-time time:after{
-	content: attr(title) "\A";
-	font-size: calc(var(--info-font-size, 15px)*0.933);
+.status__relative-time time:after {
+  content: attr(title) "\A";
+  font-size: calc(var(--info-font-size, 15px) * 0.933);
 }
-.detailed-status__datetime time:after{
-	content: attr(title);
-	font-size: calc(var(--info-font-size, 15px)*0.933);
+.detailed-status__datetime time:after {
+  content: attr(title);
+  font-size: calc(var(--info-font-size, 15px) * 0.933);
 }
 
 /*
@@ -447,64 +449,64 @@ time {
  *
  */
 /* 通知欄ホバー時に元投稿を表示し、通常時は隠すことでスリム化 */
-.notification div[tabindex="-1"]{
-	max-height: 0;
-	padding-bottom: 10px;
-	border-bottom: 1px solid var(--article-border);
-	transition: 500ms max-height ease;
-	transition: 0ms border ease;
-	overflow: hidden;
+.notification div[tabindex="-1"] {
+  max-height: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--article-border);
+  transition: 500ms max-height ease;
+  transition: 0ms border ease;
+  overflow: hidden;
 }
-.notification:hover div[tabindex="-1"]{
-	max-height: 2000px;
-	border: none;
+.notification:hover div[tabindex="-1"] {
+  max-height: 2000px;
+  border: none;
 }
 /* 通知内のレイアウト調整 */
-.notification__message{
-	margin-left: 40px;
+.notification__message {
+  margin-left: 40px;
 }
 /* 絵文字（アイコン）を位置調整して少し拡大 */
 .notification__favourite-icon-wrapper,
-.notification__reaction-icon-wrapper{
-	top: -18px;
-	left: -30px;
-	margin-top: 26px;
+.notification__reaction-icon-wrapper {
+  top: -18px;
+  left: -30px;
+  margin-top: 26px;
 }
 .notification__message .fa-retweet:before,
 .notification__message .fa-star:before,
 .notification__message .fa-user-plus:before,
 .notification__message .fa-tasks:before,
 .notification__message .fa-clock-o:before,
-.notification__message .fa-link:before{
-	font-size: 1.5rem;
+.notification__message .fa-link:before {
+  font-size: 1.5rem;
 }
-.notification__reaction-icon-wrapper img.emojione:not(.reaction){
-	height: 1.5rem;
+.notification__reaction-icon-wrapper img.emojione:not(.reaction) {
+  height: 1.5rem;
 }
 /* 通知内InstanceTickerの調整 */
-.notification__message:has(.wide) span span{
-	margin-top: 5px;
+.notification__message:has(.wide) span span {
+  margin-top: 5px;
 }
-.notification__message span{
-	display: block !important; 
-	width: 100%;
+.notification__message span {
+  display: block !important;
+  width: 100%;
 }
-.notification__display-name:before{
-	display: block !important;
-	width: 100%;
+.notification__display-name:before {
+  display: block !important;
+  width: 100%;
 }
 /* 通知があった日時を表示するが、表記がUTCである点に注意 */
-.notification__message:has([title]) > span:after{
-	display: block;
-	text-align: right;
-	content: attr(title) "(UTC)";
+.notification__message:has([title]) > span:after {
+  display: block;
+  text-align: right;
+  content: attr(title) "(UTC)";
 }
 /* フォロー通知対応 */
-.notification__avatar-wrapper{
-	left: -30px;
+.notification__avatar-wrapper {
+  left: -30px;
 }
-.notification__followed_message{
-	margin-left: 30px;
+.notification__followed_message {
+  margin-left: 30px;
 }
 
 /*
@@ -515,28 +517,28 @@ time {
  *   4段目：アカウント名（リモートサーバの場合はドメインまで）   
  *   5段目：InstanceTicker（表示する設定の場合・ない場合は省略）
  */
-.status__info:not(:has(.dt-published)){
-	display: flex;
-	flex-wrap: wrap;
+.status__info:not(:has(.dt-published)) {
+  display: flex;
+  flex-wrap: wrap;
 }
 .status__info:not(:has(.dt-published)) .status__display-name,
-.status.light .display-name{
-	min-width: 100%;
-	padding-right: 0;
+.status.light .display-name {
+  min-width: 100%;
+  padding-right: 0;
 }
 /* 表示名とアカウント名を行分離 */
-.status .display-name bdi:after{
-	white-space: pre;
-	content: "\A";
+.status .display-name bdi:after {
+  white-space: pre;
+  content: "\A";
 }
 /* 公開期限、投稿日時表記を右揃えに */
 .status__relative-time,
-.status__expiration-time{
-	height: fit-content;
-	margin: 0 0 0 auto;
+.status__expiration-time {
+  height: fit-content;
+  margin: 0 0 0 auto;
 }
-.status__expiration-time{
-	padding: 0 8px;
+.status__expiration-time {
+  padding: 0 8px;
 }
 
 /* 
@@ -546,53 +548,53 @@ time {
 .emoji-picker-dropdown__menu,
 .emoji-mart-search,
 .emoji-mart-scroll,
-.dropdown-menu.dropdown-menu-reaction{
-	background: var(--background-light);
+.dropdown-menu.dropdown-menu-reaction {
+  background: var(--background-light);
 }
-.emoji-mart-anchors{
-	background-color: var(--background-light);
+.emoji-mart-anchors {
+  background-color: var(--background-light);
 }
-.emoji-mart-search input{
-	color: var(--foreground);
-	background-color: var(--background-light);
+.emoji-mart-search input {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
-.emoji-mart-anchor-icon{
-	color: var(--foreground);
+.emoji-mart-anchor-icon {
+  color: var(--foreground);
 }
-.emoji-mart-anchor-selected .emoji-mart-anchor-icon{
-	color: var(--active);
+.emoji-mart-anchor-selected .emoji-mart-anchor-icon {
+  color: var(--active);
 }
-.emoji-mart-anchor-selected .emoji-mart-anchor-bar{
-	background: none;
+.emoji-mart-anchor-selected .emoji-mart-anchor-bar {
+  background: none;
 }
-.emoji-mart-category-label span{
-	color: var(--foreground);
-	background: var(--background-light);
+.emoji-mart-category-label span {
+  color: var(--foreground);
+  background: var(--background-light);
 }
-.emoji-mart-emoji:hover{
-	background: var(--active);
+.emoji-mart-emoji:hover {
+  background: var(--active);
 }
 
 /* 
  * リアクションボタンホバー時のツールチップの配色
  *
  */
-.account-popup.dropdown-menu{
-	background: var(--background-light);
+.account-popup.dropdown-menu {
+  background: var(--background-light);
 }
-.account-popup__display-name__html{
-	color: var(--foreground);
+.account-popup__display-name__html {
+  color: var(--foreground);
 }
 
 /* for modern 各投稿のステータスアクションバーのずれを解消 */
 #mastodon .detailed-status__action-bar .icon-button,
 #mastodon .status__action-bar .icon-button,
 .public-layout .detailed-status__action-bar .icon-button,
-.public-layout .status__action-bar .icon-button{
-	padding:0 !important;
+.public-layout .status__action-bar .icon-button {
+  padding: 0 !important;
 }
 
 /* グループヘッダのリンクもろもろ */
-.group__header__content a{
-	color: var(--active);
+.group__header__content a {
+  color: var(--active);
 }

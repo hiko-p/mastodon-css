@@ -3,23 +3,23 @@
  *
  */
 /* 色指定 */
-:root{
-	/* for ダーク or ハイコントラスト */
-	--foreground: rgb(255, 255, 255);
-	--background-drawer: rgb(24, 26, 27);
-	--background-dark: rgb(24, 26, 27);
-	--background-light: rgb(35, 38, 40);
-	--article-border: rgb(57, 63, 79);
-	--active: rgb(225, 137, 59);
-	--disabled: rgb(155, 174, 200);
-	--calendar-weekend: rgb(255, 0, 0);
-	--button-foreground: rgb(255, 255, 255);
-	--button-normal: rgb(43, 144, 217);
-	--button-active: rgb(86, 167, 225);
-	--compose-button-fg: rgb(96, 105, 132);
-	
-	/* for ライト */
-	/*
+:root {
+  /* for ダーク or ハイコントラスト */
+  --foreground: rgb(255, 255, 255);
+  --background-drawer: rgb(24, 26, 27);
+  --background-dark: rgb(24, 26, 27);
+  --background-light: rgb(35, 38, 40);
+  --article-border: rgb(57, 63, 79);
+  --active: rgb(225, 137, 59);
+  --disabled: rgb(155, 174, 200);
+  --calendar-weekend: rgb(255, 0, 0);
+  --button-foreground: rgb(255, 255, 255);
+  --button-normal: rgb(43, 144, 217);
+  --button-active: rgb(86, 167, 225);
+  --compose-button-fg: rgb(96, 105, 132);
+
+  /* for ライト */
+  /*
 	--foreground: rgb(0, 0, 0);
 	--background-drawer: rgb(239, 243, 245);
 	--background-dark: rgb(255, 255, 255);
@@ -40,30 +40,30 @@
  * 他カラムは横スクロール可能
  *
  */
-.column{
-	z-index: 0;
+.column {
+  z-index: 0;
 }
-.drawer{
-	z-index: 1;
-	position: sticky;
-	left: 0;
-	overflow: hidden;
-	background-color: var(--background-drawer);
+.drawer {
+  z-index: 1;
+  position: sticky;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--background-drawer);
 }
 
 /* 各カラムのアイコン色（新着ありの時）指定 */
 .column-header.active .column-header__icon,
 .column-header__button.active .fa-bullhorn,
-.column-header.active .fa-globe{
-	color: var(--active);
+.column-header.active .fa-globe {
+  color: var(--active);
 }
 
 /* カラムのフィルターバー選択項目の色指定 */
 .account__section-headline a.active,
 .account__section-headline button.active,
 .notification__filter-bar a.active,
-.notification__filter-bar button.active{
-	color:var(--active);
+.notification__filter-bar button.active {
+  color: var(--active);
 }
 
 /* メンションリンク、ハッシュタグリンクの文字色指定 */
@@ -74,51 +74,53 @@
 .reply-indicator__content a,
 .status__content a,
 .account__header__content a,
-.hashtag-bar{
-	color: var(--active);
+.hashtag-bar {
+  color: var(--active);
 }
 
 /* 自分がしたリアクションを強調表示 反映されるまでにラグが出ることがある */
-.reactions-bar__item.active{
-	background-color: var(--active);
+.reactions-bar__item.active {
+  background-color: var(--active);
 }
-.reactions-bar__item.active .reactions-bar__item__count{
-	color: var(--foreground);
+.reactions-bar__item.active .reactions-bar__item__count {
+  color: var(--foreground);
 }
-.status__action-bar .icon-button.active{
-	color: var(--active);
+.status__action-bar .icon-button.active {
+  color: var(--active);
 }
-.icon-button.active .fa-retweet{
-	filter: sepia(100%)brightness(90%)hue-rotate(360deg)saturate(2000%)contrast(60%);
+.icon-button.active .fa-retweet {
+  filter: sepia(100%) brightness(90%) hue-rotate(360deg) saturate(2000%)
+    contrast(60%);
 }
 
 /* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
-.reactions-bar{
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
+.reactions-bar {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
-.reactions-bar__item{
-	max-width: 245px;
+.reactions-bar__item {
+  max-width: 245px;
 }
-span.reactions-bar__item__emoji img.emojione.custom-emoji{
-	aspect-ratio: auto;
-	max-width: 180px;
+span.reactions-bar__item__emoji img.emojione.custom-emoji {
+  aspect-ratio: auto;
+  max-width: 180px;
 }
-.reactions-bar__item__emoji img{
-	aspect-ratio: auto;
-	max-width: 180px;
-	width: unset;
+.reactions-bar__item__emoji img {
+  aspect-ratio: auto;
+  max-width: 180px;
+  width: unset;
 }
 
 /* モーダルダイアログ */
 .react-toggle--checked .react-toggle-track,
-.react-toggle--checked:is(:hover,:focus-within):not(.react-toggle--disabled) .react-toggle-track{
-	background: var(--active);
+.react-toggle--checked:is(:hover, :focus-within):not(.react-toggle--disabled)
+  .react-toggle-track {
+  background: var(--active);
 }
-.embed-modal{
-	color: var(--foreground);
-	background: var(--background-light);
+.embed-modal {
+  color: var(--foreground);
+  background: var(--background-light);
 }
 
 /* 
@@ -132,61 +134,61 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
 .compose-form .compose-form__datetime-wrapper input,
 .compose-form .compose-form__datetime-wrapper select,
 .compose-form .spoiler-input__input,
-.compose-form .autosuggest-input input{
-	color: var(--foreground);
-	background-color: var(--background-dark);
+.compose-form .autosuggest-input input {
+  color: var(--foreground);
+  background-color: var(--background-dark);
 }
 .compose-form .compose-form__buttons-wrapper,
-.privacy-dropdown__dropdown{
-	background: var(--background-light);
+.privacy-dropdown__dropdown {
+  background: var(--background-light);
 }
 .privacy-dropdown__option,
 .privacy-dropdown__option__content,
-.privacy-dropdown__option__content strong{
-	color: var(--foreground);
+.privacy-dropdown__option__content strong {
+  color: var(--foreground);
 }
-.privacy-dropdown__option.active{
-	background-color: var(--active);
+.privacy-dropdown__option.active {
+  background-color: var(--active);
 }
 .icon-button,
 .icon-button.inverted,
 .text-icon-button,
-.character-counter{
-	color: var(--compose-button-fg);
+.character-counter {
+  color: var(--compose-button-fg);
 }
 .icon-button.inverted.active,
 .text-icon-button.active,
-.text-icon-button.active:hover{
-	color: var(--active);
+.text-icon-button.active:hover {
+  color: var(--active);
 }
-.compose-form__poll__select__value option{
-	background: var(--background-light);
+.compose-form__poll__select__value option {
+  background: var(--background-light);
 }
 
 /* 検索マニュアル */
-.search__popout__menu__item:hover{
-	background: var(--active);
+.search__popout__menu__item:hover {
+  background: var(--active);
 }
 
-.compose-form__poll-wrapper .icon-button{
-	color: var(--foreground);
+.compose-form__poll-wrapper .icon-button {
+  color: var(--foreground);
 }
 
 /* アンケート項目 */
 .poll__option.editable .poll__input:active,
 .poll__option.editable .poll__input:focus,
 .poll__option.editable .poll__input:hover,
-.poll__option input[type=text]:active,
-.poll__option input[type=text]:focus{
-	border-color: var(--active);
+.poll__option input[type="text"]:active,
+.poll__option input[type="text"]:focus {
+  border-color: var(--active);
 }
 
 /* 言語選択ドロップダウン */
-.language-dropdown__dropdown__results__item{
-	color: var(--disabled);
+.language-dropdown__dropdown__results__item {
+  color: var(--disabled);
 }
-.language-dropdown__dropdown__results__item.active{
-	background-color: var(--active);
+.language-dropdown__dropdown__results__item.active {
+  background-color: var(--active);
 }
 
 /*
@@ -194,9 +196,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
  * アンケート（2項目）・CW・をすべて開いた際にスクロールバーを出さないサイズに調整
  *
  */
-.compose-form .autosuggest-textarea__textarea{
-	min-height: 180px;
-	max-height: 180px;
+.compose-form .autosuggest-textarea__textarea {
+  min-height: 180px;
+  max-height: 180px;
 }
 
 /*
@@ -211,26 +213,26 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji{
  * カード表記、通知表記にも影響あり
  *
  */
-time{
-	font-size: 0;
+time {
+  font-size: 0;
 }
 /* 公開期限 */
-.status__expiration-time time:before{
-	content: "exp: ";
-	font-size: 0.9rem;
+.status__expiration-time time:before {
+  content: "exp: ";
+  font-size: 0.9rem;
 }
-.status__expiration-time time:after{
-	content: attr(title);
-	font-size: 0.9rem;
+.status__expiration-time time:after {
+  content: attr(title);
+  font-size: 0.9rem;
 }
 /* 投稿日時 */
-.status__relative-time time:before{
-	content: "post: ";
-	font-size: 0.9rem;
+.status__relative-time time:before {
+  content: "post: ";
+  font-size: 0.9rem;
 }
-.status__relative-time time:after{
-	content: attr(title);
-	font-size: 0.9rem;
+.status__relative-time time:after {
+  content: attr(title);
+  font-size: 0.9rem;
 }
 
 /*
@@ -238,31 +240,31 @@ time{
  *
  */
 /* 通知欄ホバー時に元投稿を表示し、通常時は一部のみ表示して隠すことでスリム化 */
-.notification-group__main__status{
-	max-height: 15px;
-	transition: 500ms max-height ease;
-	overflow: hidden;
+.notification-group__main__status {
+  max-height: 15px;
+  transition: 500ms max-height ease;
+  overflow: hidden;
 }
-.notification-group__main__status:hover{
-	max-height: 2000px;
+.notification-group__main__status:hover {
+  max-height: 2000px;
 }
 /* フォロー通知・ブースト通知・お気に入り通知の日時表記 */
-.notification-group__main__header__label{
-	flex-wrap: wrap;
-	width: 100%;
+.notification-group__main__header__label {
+  flex-wrap: wrap;
+  width: 100%;
 }
-.notification-group__main__header__label span{
-	width: 100%;
+.notification-group__main__header__label span {
+  width: 100%;
 }
 
-.notification-group__main__header time{
-	display: initial;
-	margin-left: auto;
+.notification-group__main__header time {
+  display: initial;
+  margin-left: auto;
 }
-.notification-group__main__header__label time:after{
-	text-align: right;
-	content: attr(title);
-	font-size: 0.9rem;
+.notification-group__main__header__label time:after {
+  text-align: right;
+  content: attr(title);
+  font-size: 0.9rem;
 }
 
 /* 未読通知、非公開の返信の強調色 */
@@ -270,18 +272,18 @@ time{
 .notification-ungrouped--unread:before,
 .conversation.unread:before,
 .notification.unread:before,
-.status__wrapper.unread:before{
-	border-inline-start-color: var(--active);
+.status__wrapper.unread:before {
+  border-inline-start-color: var(--active);
 }
-.conversation__unread{
-	background: var(--active);
+.conversation__unread {
+  background: var(--active);
 }
 
 /* 相互フォロー中ボタン */
-.button.button-secondary{
-	color: var(--foreground);
-	background: var(--active);
-	border-color: var(--active);
+.button.button-secondary {
+  color: var(--foreground);
+  background: var(--active);
+  border-color: var(--active);
 }
 
 /* 
@@ -291,160 +293,160 @@ time{
 .emoji-picker-dropdown__menu,
 .emoji-mart-search,
 .emoji-mart-scroll,
-.dropdown-menu.dropdown-menu-reaction{
-	background: var(--background-dark);
+.dropdown-menu.dropdown-menu-reaction {
+  background: var(--background-dark);
 }
-.emoji-mart-anchors{
-	background-color: var(--background-light);
+.emoji-mart-anchors {
+  background-color: var(--background-light);
 }
-.emoji-mart-search input{
-	color: var(--foreground);
-	background-color: var(--background-light);
+.emoji-mart-search input {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
-.emoji-mart-anchor-icon{
-	color: var(--foreground);
+.emoji-mart-anchor-icon {
+  color: var(--foreground);
 }
-.emoji-mart-anchor-selected .emoji-mart-anchor-icon{
-	color: var(--active);
+.emoji-mart-anchor-selected .emoji-mart-anchor-icon {
+  color: var(--active);
 }
-.emoji-mart-anchor-selected .emoji-mart-anchor-bar{
-	background: none;
+.emoji-mart-anchor-selected .emoji-mart-anchor-bar {
+  background: none;
 }
-.emoji-mart-category-label span{
-	color: var(--foreground);
-	background: var(--background-light);
+.emoji-mart-category-label span {
+  color: var(--foreground);
+  background: var(--background-light);
 }
-.emoji-mart-emoji:hover{
-	background: var(--active);
+.emoji-mart-emoji:hover {
+  background: var(--active);
 }
 
 /*
  * 投稿の表記変更
  *
  */
-.status__info{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0;
-	padding-bottom: 0;
+.status__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding-bottom: 0;
 }
 .status__info .status__display-name,
-.status.light .display-name{
-	min-width: 100%;
-	padding-right: 0;
+.status.light .display-name {
+  min-width: 100%;
+  padding-right: 0;
 }
 /* 公開期限、投稿日時表記を右揃えに */
 .status__relative-time,
-.status__expiration-time{
-	height: fit-content;
-	margin: 0 0 0 auto;
+.status__expiration-time {
+  height: fit-content;
+  margin: 0 0 0 auto;
 }
 
 /* カード表示を縮小する（通常版） */
-.status-card:not(.expanded){
-	height: 60px;
+.status-card:not(.expanded) {
+  height: 60px;
 }
-.status-card:not(.expanded) .status-card__image{
-	height: 60px;
-	width: 60px;
+.status-card:not(.expanded) .status-card__image {
+  height: 60px;
+  width: 60px;
 }
-.status-card:not(.expanded) .status-card__content{
-	padding: 1px 4px;
-	height: 60px;
-	width: 100%;
+.status-card:not(.expanded) .status-card__content {
+  padding: 1px 4px;
+  height: 60px;
+  width: 100%;
 }
-.status-card:not(.expanded) .status-card__host{
-	height: 14px;
-	font-size: 0;
-	width: 100%;
-	margin-bottom: 1px;
-	display: flex;
+.status-card:not(.expanded) .status-card__host {
+  height: 14px;
+  font-size: 0;
+  width: 100%;
+  margin-bottom: 1px;
+  display: flex;
 }
-.status-card:not(.expanded) .status-card__host span{
-	height: 12px;
-	font-size: 9px;
-	margin-bottom: 1px;
+.status-card:not(.expanded) .status-card__host span {
+  height: 12px;
+  font-size: 9px;
+  margin-bottom: 1px;
 }
-.status-card:not(.expanded) time{
-	margin-left: auto;
+.status-card:not(.expanded) time {
+  margin-left: auto;
 }
-.status-card:not(.expanded) time:after{
-	content: attr(title);
-	font-size: 0.6rem;
+.status-card:not(.expanded) time:after {
+  content: attr(title);
+  font-size: 0.6rem;
 }
-.status-card:not(.expanded) .status-card__title{
-	display: inherit;
-	text-overflow: ellipsis;
-	font-size: 12px;
-	white-space:  nowrap;
+.status-card:not(.expanded) .status-card__title {
+  display: inherit;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  white-space: nowrap;
 }
-.status-card:not(.expanded) .status-card__author{
-	font-size: 12px;
-	margin-top: 1px;
-	margin-right: 1px;
-	text-align: right;
+.status-card:not(.expanded) .status-card__author {
+  font-size: 12px;
+  margin-top: 1px;
+  margin-right: 1px;
+  text-align: right;
 }
-.status-card:not(.expanded) .status-card__description{
-	display: none;
+.status-card:not(.expanded) .status-card__description {
+  display: none;
 }
 
 /* カード表示を縮小する（expanded版） */
-.status-card.expanded{
-	height: 120px;
+.status-card.expanded {
+  height: 120px;
 }
-.status-card.expanded .status-card__image{
-	height: 60px;
+.status-card.expanded .status-card__image {
+  height: 60px;
 }
-.status-card.expanded .status-card__content{
-	padding: 1px 4px;
-	height: 60px;
-	width: 100%;
+.status-card.expanded .status-card__content {
+  padding: 1px 4px;
+  height: 60px;
+  width: 100%;
 }
-.status-card.expanded .status-card__host{
-	height: 14px;
-	font-size: 0;
-	width: 100%;
-	margin-bottom: 1px;
-	display: flex;
+.status-card.expanded .status-card__host {
+  height: 14px;
+  font-size: 0;
+  width: 100%;
+  margin-bottom: 1px;
+  display: flex;
 }
-.status-card.expanded .status-card__host span{
-	height: 12px;
-	font-size: 9px;
-	margin-bottom: 1px;
+.status-card.expanded .status-card__host span {
+  height: 12px;
+  font-size: 9px;
+  margin-bottom: 1px;
 }
-.status-card.expanded time{
-	margin-left: auto;
+.status-card.expanded time {
+  margin-left: auto;
 }
-.status-card.expanded time:after{
-	content: attr(title);
-	font-size: 0.6rem;
+.status-card.expanded time:after {
+  content: attr(title);
+  font-size: 0.6rem;
 }
-.status-card.expanded .status-card__title{
-	display: inherit;
-	text-overflow: ellipsis;
-	font-size: 12px;
-	white-space: nowrap;
+.status-card.expanded .status-card__title {
+  display: inherit;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  white-space: nowrap;
 }
-.status-card.expanded .status-card__author{
-	font-size: 12px;
-	margin-top: 1px;
-	margin-right: 1px;
-	text-align: right;
+.status-card.expanded .status-card__author {
+  font-size: 12px;
+  margin-top: 1px;
+  margin-right: 1px;
+  text-align: right;
 }
-.status-card.expanded .status-card__description{
-	display: none;
+.status-card.expanded .status-card__description {
+  display: none;
 }
 
 /* 添付画像の最大サイズ（height）を制限する */
-.status .media-gallery{
-	max-height: 200px;
+.status .media-gallery {
+  max-height: 200px;
 }
 
 /* 絵文字の表示調整 */
-.emojione{
-	width: auto;
+.emojione {
+  width: auto;
 }
 /* 本文中の絵文字のみホバー時に拡大表示 */
-.status__content__text .emojione:hover{
-	height: 4rem;
+.status__content__text .emojione:hover {
+  height: 4rem;
 }
