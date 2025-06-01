@@ -509,6 +509,7 @@ time {
 }
 .notification__followed_message {
   margin-left: 30px;
+  min-height: 40px;
 }
 
 /*
