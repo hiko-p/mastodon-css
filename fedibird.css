@@ -160,7 +160,8 @@ a.status-link {
 .reactions-bar__item.active .reactions-bar__item__count {
   color: var(--foreground);
 }
-.status__action-bar .icon-button.active {
+.status__action-bar .icon-button.active,
+.detailed-status__action-bar .icon-button.active {
   color: var(--active);
 }
 .icon-button.active .fa-retweet {
@@ -279,6 +280,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
  * drawerカラムの調整
  *
  */
+.drawer {
+  width: 365px;
+}
 /* 投稿フォームの調整 */
 .compose-form .autosuggest-textarea__textarea,
 .compose-form .compose-form__modifiers,
@@ -323,6 +327,24 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
 }
 .search-popout em {
   color: var(--disabled);
+}
+
+/* 検索 */
+.drawer .status {
+  width: 250px;
+  padding-left: 72px;
+  padding-right: 5px;
+}
+.search-results__section .account {
+  padding-right: 1px;
+}
+.search-results__section .account__relationship .icon-button {
+  padding: 4px;
+}
+.search__input,
+.search__input:focus {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
 
 /* 公開日時、終了日時のカレンダーポップアップ ポップアップ内の時間選択部分のみ未対応 */
@@ -601,4 +623,31 @@ time {
 /* グループヘッダのリンクもろもろ */
 .group__header__content a {
   color: var(--active);
+}
+
+/* カード表示を縮小する（通常版） */
+.status-card:not(.expanded) {
+  height: 60px;
+}
+.status-card:not(.expanded) .status-card__image {
+  height: 60px;
+  width: 60px;
+}
+.status-card:not(.expanded) .status-card__content {
+  padding: 1px 4px;
+  height: 60px;
+  width: 100%;
+}
+.status-card:not(.expanded) .status-card__title {
+  display: inherit;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.status-card:not(.expanded) .status-card__host {
+  height: 18px;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 1px;
+  display: flex;
 }

@@ -169,7 +169,7 @@ div.status__content:nth-child(2) {
 }
 
 /* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
-.reactions-bar {
+.emoji-reactions-bar.reactions-bar {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -267,6 +267,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
  * drawerカラムの調整
  *
  */
+.drawer {
+  width: 365px;
+}
 /* 投稿フォームの調整 */
 .compose-form .autosuggest-textarea__textarea,
 .compose-form .compose-form__modifiers,
@@ -311,6 +314,24 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
 }
 .search-popout em {
   color: var(--disabled);
+}
+
+/* 検索 */
+.drawer .status {
+  width: 250px;
+  padding-left: 72px;
+  padding-right: 5px;
+}
+.search-results__section .account {
+  padding-right: 1px;
+}
+.search-results__section .account__relationship .icon-button {
+  padding: 4px;
+}
+.search__input,
+.search__input:focus {
+  color: var(--foreground);
+  background-color: var(--background-light);
 }
 
 /* 公開日時、終了日時のカレンダーポップアップ ポップアップ内の時間選択部分のみ未対応 */
@@ -496,7 +517,7 @@ time {
   width: 100%;
 }
 /* 通知があった日時を表示するが、表記がUTCである点に注意 */
-.notification__message:has([title]) > span:after {
+.notification__message:not(:has(.translate)) > span:after {
   display: block;
   text-align: right;
   content: attr(title) "(UTC)";
@@ -586,12 +607,42 @@ time {
   color: var(--foreground);
 }
 
+/* カード表示を縮小する（通常版） */
+.status-card:not(.expanded) {
+  height: 60px;
+}
+.status-card:not(.expanded) .status-card__image {
+  height: 60px;
+  width: 60px;
+}
+.status-card:not(.expanded) .status-card__content {
+  padding: 1px 4px;
+  height: 60px;
+  width: 100%;
+}
+.status-card:not(.expanded) .status-card__title {
+  display: inherit;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.status-card:not(.expanded) .status-card__host {
+  height: 18px;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 1px;
+  display: flex;
+}
+
 /* for modern 各投稿のステータスアクションバーのずれを解消 */
 #mastodon .detailed-status__action-bar .icon-button,
 #mastodon .status__action-bar .icon-button,
 .public-layout .detailed-status__action-bar .icon-button,
 .public-layout .status__action-bar .icon-button {
-  padding: 0 !important;
+  padding: 0 !important ;
+}
+.layout-multiple-columns #mastodon .columns-area .drawer {
+  padding-inline: inherit;
 }
 
 /* グループヘッダのリンクもろもろ */
