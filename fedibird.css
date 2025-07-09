@@ -17,6 +17,8 @@
   --button-normal: rgb(43, 144, 217);
   --button-active: rgb(86, 167, 225);
   --compose-button-fg: rgb(96, 105, 132);
+  --cb-background: rgb(225, 137, 59);
+  --cb-mark-background: rgb(225, 137, 59, 0.6);
 
   /* for ライト */
   /*
@@ -32,6 +34,8 @@
 	--button-normal: rgb(43, 144, 217);
 	--button-active: rgb(86, 167, 225);
 	--compose-button-fg: rgb(96, 105, 132);
+  --cb-background: rgb(225, 137, 59);
+  --cb-mark-background: rgb(225, 137, 59, 0.6);
 	*/
 
   /* for takibi */
@@ -48,6 +52,8 @@
 	--button-normal: rgb(225, 174, 129);
 	--button-active: rgb(225, 137, 59);
 	--compose-button-fg: rgb(40, 44, 55);
+  --cb-background: rgb(225, 137, 59);
+  --cb-mark-background: rgb(225, 137, 59, 0.6);
 	*/
 }
 
@@ -650,4 +656,17 @@ time {
   width: 100%;
   margin-bottom: 1px;
   display: flex;
+}
+
+/* コードブロック */
+pre:has(code) {
+  border: 2px solid var(--cb-background);
+  border-radius: 10px;
+  padding: 6px;
+  code {
+    background-color: var(--background-dark);
+  }
+}
+code {
+  background-color: var(--cb-mark-background);
 }
