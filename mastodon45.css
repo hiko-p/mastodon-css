@@ -21,6 +21,7 @@
   --cb-background: rgb(225, 137, 59);
   --cb-mark-background: rgb(225, 137, 59, 0.6);
   --background-direct: rgba(99, 100, 255, 0.05);
+  --alert: rgb(223, 64, 90);
 
   /* for ライト */
   /*
@@ -40,6 +41,7 @@
 	--cb-background: rgb(225, 137, 59);
 	--cb-mark-background: rgb(225, 137, 59, 0.6);
 	--background-direct: rgba(99, 100, 255, .05);
+  --alert: rgb(223, 64, 90);
 	*/
 }
 
@@ -518,4 +520,12 @@ pre:has(code) {
 .edit-indicator__content blockquote:before,
 .reply-indicator__content blockquote:before {
   --rich-text-decorations-color: var(--active);
+}
+
+/* アイコンバッジ */
+.icon-with-badge__badge {
+  background: var(--active);
+}
+.icon-with-badge__issue-badge {
+  background: var(--alert);
 }
