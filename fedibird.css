@@ -18,7 +18,7 @@
   --button-active: rgb(86, 167, 225);
   --compose-button-fg: rgb(96, 105, 132);
   --cb-background: rgb(225, 137, 59);
-  --cb-mark-background: rgb(225, 137, 59, 0.6);
+  --cb-mark-background: rgba(225, 137, 59, 0.6);
 
   /* for ライト */
   /*
@@ -35,7 +35,7 @@
 	--button-active: rgb(86, 167, 225);
 	--compose-button-fg: rgb(96, 105, 132);
   --cb-background: rgb(225, 137, 59);
-  --cb-mark-background: rgb(225, 137, 59, 0.6);
+  --cb-mark-background: rgba(225, 137, 59, 0.6);
 	*/
 
   /* for takibi */
@@ -53,7 +53,7 @@
 	--button-active: rgb(225, 137, 59);
 	--compose-button-fg: rgb(40, 44, 55);
   --cb-background: rgb(225, 137, 59);
-  --cb-mark-background: rgb(225, 137, 59, 0.6);
+  --cb-mark-background: rgba(225, 137, 59, 0.6);
 	*/
 }
 
