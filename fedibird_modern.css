@@ -651,6 +651,11 @@ code {
   background-color: var(---cb-mark-background);
 }
 
+/* アイコンバッジ */
+.icon-with-badge__badge {
+  background: var(--active);
+}
+
 /* for modern 各投稿のステータスアクションバーのずれを解消 */
 #mastodon .detailed-status__action-bar .icon-button,
 #mastodon .status__action-bar .icon-button,

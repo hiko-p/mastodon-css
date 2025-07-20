@@ -654,6 +654,11 @@ code {
   background-color: var(--cb-mark-background);
 }
 
+/* アイコンバッジ */
+.icon-with-badge__badge {
+  background: var(--active);
+}
+
 /* for material */
 /* 投稿フォーム下部のボタン・文字数表記 */
 .compose-form .compose-form__buttons-wrapper {
