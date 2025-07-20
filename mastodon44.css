@@ -19,7 +19,7 @@
   --button-active: rgb(225, 137, 59);
   --compose-button-fg: rgb(96, 105, 132);
   --cb-background: rgb(225, 137, 59);
-  --cb-mark-background: rgb(225, 137, 59, 0.6);
+  --cb-mark-background: rgba(225, 137, 59, 0.6);
   --background-direct: rgba(99, 100, 255, 0.05);
   --alert: rgb(223, 64, 90);
 
@@ -39,7 +39,7 @@
 	--button-active: rgb(225, 137, 59);
 	--compose-button-fg: rgb(96, 105, 132);
 	--cb-background: rgb(225, 137, 59);
-	--cb-mark-background: rgb(225, 137, 59, 0.6);
+	--cb-mark-background: rgba(225, 137, 59, 0.6);
 	--background-direct: rgba(99, 100, 255, .05);
   --alert: rgb(223, 64, 90);
 	*/
