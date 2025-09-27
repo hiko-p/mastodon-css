@@ -41,7 +41,7 @@
 	--cb-background: rgb(225, 137, 59);
 	--cb-mark-background: rgba(225, 137, 59, 0.6);
 	--background-direct: rgba(99, 100, 255, .05);
-  --alert: rgb(223, 64, 90);
+	--alert: rgb(223, 64, 90);
 	*/
 }
 
@@ -371,104 +371,213 @@ time {
   margin: 0 0 0 auto;
 }
 
-/* カード表示を縮小する（通常版） */
-.status-card:not(.expanded) {
-  height: 60px;
-}
-.status-card:not(.expanded) .status-card__image {
-  height: 60px;
-  width: 60px;
-}
-.status-card:not(.expanded) .status-card__content {
-  padding: 1px 4px;
-  height: 60px;
-  width: 100%;
-}
-.status-card:not(.expanded) .status-card__host {
-  height: 14px;
-  font-size: 0;
-  width: 100%;
-  margin-bottom: 1px;
-  display: flex;
-}
-.status-card:not(.expanded) .status-card__host span {
-  height: 12px;
-  font-size: 9px;
-  margin-bottom: 1px;
-}
-.status-card:not(.expanded) time {
-  margin-left: auto;
-}
-.status-card:not(.expanded) time:after {
-  content: attr(title);
-  font-size: 0.6rem;
-}
-.status-card:not(.expanded) .status-card__title {
-  display: inherit;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  white-space: nowrap;
-}
-.status-card:not(.expanded) .status-card__author {
-  font-size: 12px;
-  margin-top: 1px;
-  margin-right: 1px;
-  text-align: right;
-}
-.status-card:not(.expanded) .status-card__description {
-  display: none;
+/* カード表示の調整 */
+.layout-multiple-columns {
+  /* 上級者UI */
+  /* 通常版 */
+  .status-card:not(.expanded) {
+    height: 60px;
+  }
+  .status-card:not(.expanded) .status-card__image {
+    height: 60px;
+    width: 60px;
+  }
+  .status-card:not(.expanded) .status-card__content {
+    padding: 1px 4px;
+    height: 60px;
+    width: 100%;
+  }
+  .status-card:not(.expanded) .status-card__host {
+    height: 14px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card:not(.expanded) .status-card__host span {
+    height: 12px;
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+  .status-card:not(.expanded) time {
+    margin-left: auto;
+  }
+  .status-card:not(.expanded) time:after {
+    content: attr(title);
+    font-size: 0.6rem;
+  }
+  .status-card:not(.expanded) .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .status-card:not(.expanded) .status-card__author {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card:not(.expanded) .status-card__description {
+    display: none;
+  }
+
+  /* expanded版 */
+  .status-card.expanded {
+    height: 120px;
+  }
+  .status-card.expanded .status-card__image {
+    height: 60px;
+  }
+  .status-card.expanded .status-card__content {
+    padding: 1px 4px;
+    height: 60px;
+    width: 100%;
+  }
+  .status-card.expanded .status-card__host {
+    height: 14px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card.expanded .status-card__host span {
+    height: 12px;
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+  .status-card.expanded time {
+    margin-left: auto;
+  }
+  .status-card.expanded time:after {
+    content: attr(title);
+    font-size: 0.6rem;
+  }
+  .status-card.expanded .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .status-card.expanded .status-card__author {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card.expanded .status-card__description {
+    display: none;
+  }
 }
 
-/* カード表示を縮小する（expanded版） */
-.status-card.expanded {
-  height: 120px;
-}
-.status-card.expanded .status-card__image {
-  height: 60px;
-}
-.status-card.expanded .status-card__content {
-  padding: 1px 4px;
-  height: 60px;
-  width: 100%;
-}
-.status-card.expanded .status-card__host {
-  height: 14px;
-  font-size: 0;
-  width: 100%;
-  margin-bottom: 1px;
-  display: flex;
-}
-.status-card.expanded .status-card__host span {
-  height: 12px;
-  font-size: 9px;
-  margin-bottom: 1px;
-}
-.status-card.expanded time {
-  margin-left: auto;
-}
-.status-card.expanded time:after {
-  content: attr(title);
-  font-size: 0.6rem;
-}
-.status-card.expanded .status-card__title {
-  display: inherit;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  white-space: nowrap;
-}
-.status-card.expanded .status-card__author {
-  font-size: 12px;
-  margin-top: 1px;
-  margin-right: 1px;
-  text-align: right;
-}
-.status-card.expanded .status-card__description {
-  display: none;
+.layout-single-column {
+  /* シングルカラム */
+  /* 通常版 */
+  .status-card:not(.expanded) {
+    height: 10vh;
+  }
+  .status-card:not(.expanded) .status-card__image {
+    height: 10vh;
+    width: 10vh;
+  }
+  .status-card:not(.expanded) .status-card__content {
+    padding: 2px 10px;
+    height: 100px;
+    width: 100%;
+  }
+  .status-card:not(.expanded) .status-card__host {
+    height: 30px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card:not(.expanded) .status-card__host span {
+    height: 40px;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  .status-card:not(.expanded) time {
+    margin-left: auto;
+  }
+  .status-card:not(.expanded) time:after {
+    content: attr(title);
+    font-size: 0.6rem;
+  }
+  .status-card:not(.expanded) .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .status-card:not(.expanded) .status-card__author {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card:not(.expanded) .status-card__description {
+    display: none;
+  }
+
+  /* expanded版 */
+  .status-card.expanded {
+    height: 70vh;
+  }
+  .status-card.expanded .status-card__image {
+    height: 60vh;
+  }
+  .status-card.expanded .status-card__content {
+    padding: 1px 4px;
+    height: 60px;
+    width: 100%;
+  }
+  .status-card.expanded .status-card__host {
+    height: 30px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card.expanded .status-card__host span {
+    height: 30px;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  .status-card.expanded time {
+    margin-left: auto;
+  }
+  .status-card.expanded time:after {
+    content: attr(title);
+    font-size: 14px;
+  }
+  .status-card.expanded .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .status-card.expanded .status-card__author {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card.expanded .status-card__description {
+    display: none;
+  }
 }
 
 /* 添付画像の最大サイズ（height）を制限する */
-.status .media-gallery {
-  max-height: 200px;
+.layout-multiple-columns {
+  .status .media-gallery {
+    max-height: 200px;
+  }
+}
+.layout-single-column {
+  .status .media-gallery {
+    max-height: 70vh;
+  }
 }
 
 /* コードブロック */
@@ -528,4 +637,31 @@ pre:has(code) {
 }
 .icon-with-badge__issue-badge {
   background: var(--alert);
+}
+
+/* シングルカラムモードを画面横幅いっぱいに広げる */
+.layout-single-column {
+  .columns-area__panels__pane.columns-area__panels__pane--compositional {
+    position: absolute;
+    left: 0px;
+  }
+  .columns-area__panels__pane.columns-area__panels__pane--start.columns-area__panels__pane--navigational {
+    position: absolute;
+    right: 0px;
+  }
+  .columns-area__panels__main {
+    max-width: calc(100vw - 285px - 285px - 20px);
+  }
+}
+
+/* 上級者UIのメニューカラムが画面高さを超えてしまう件の暫定対策 */
+.layout-multiple-columns {
+  .column,
+  .drawer {
+    max-height: calc(100vh - 16px);
+    padding: 0 2px 0 2px;
+  }
+  .column-link {
+    padding: 6px 12px 6px 12px;
+  }
 }
