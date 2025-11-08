@@ -614,9 +614,6 @@ pre:has(code) {
 /* 引用 */
 .status__quote {
   --quote-margin: 0;
-  .status__quote-icon {
-    display: none;
-  }
 }
 .status__content__text blockquote,
 .e-content blockquote,
@@ -651,17 +648,5 @@ pre:has(code) {
   }
   .columns-area__panels__main {
     max-width: calc(100vw - 285px - 285px - 20px);
-  }
-}
-
-/* 上級者UIのメニューカラムが画面高さを超えてしまう件の暫定対策 */
-.layout-multiple-columns {
-  .column,
-  .drawer {
-    max-height: calc(100vh - 16px);
-    padding: 0 2px 0 2px;
-  }
-  .column-link {
-    padding: 6px 12px 6px 12px;
   }
 }
