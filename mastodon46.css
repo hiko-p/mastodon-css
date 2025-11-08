@@ -1,0 +1,652 @@
+/*
+ * カスタムCSS for Mastodon4.6
+ *
+ */
+/* 色指定 */
+:root {
+  /* for ダーク or ハイコントラスト */
+  --foreground: rgb(255, 255, 255);
+  --background-drawer: rgb(24, 26, 27);
+  --background-dark: rgb(24, 26, 27);
+  --background-light: rgb(35, 38, 40);
+  --article-border: rgb(57, 63, 79);
+  --active: rgb(225, 137, 59);
+  --disabled: rgb(155, 174, 200);
+  --calendar-weekend: rgb(255, 0, 0);
+  --button-foreground: rgb(255, 255, 255);
+  --button-disabled: rgb(140, 141, 255);
+  --button-normal: rgb(86, 58, 204);
+  --button-active: rgb(225, 137, 59);
+  --compose-button-fg: rgb(96, 105, 132);
+  --cb-background: rgb(225, 137, 59);
+  --cb-mark-background: rgba(225, 137, 59, 0.6);
+  --background-direct: rgba(99, 100, 255, 0.05);
+  --alert: rgb(223, 64, 90);
+
+  /* for ライト */
+  /*
+	--foreground: rgb(0, 0, 0);
+	--background-drawer: rgb(239, 243, 245);
+	--background-dark: rgb(255, 255, 255);
+	--background-light: rgb(255, 255, 255);
+	--article-border: rgb(192, 205, 217);
+	--active: rgb(225, 137, 59);
+	--disabled: rgb(155, 174, 200);
+	--calendar-weekend: rgb(255, 0, 0);
+	--button-foreground: rgb(255, 255, 255);
+	--button-disabled: rgb(140, 141, 255);
+	--button-normal: rgb(86, 58, 204);
+	--button-active: rgb(225, 137, 59);
+	--compose-button-fg: rgb(96, 105, 132);
+	--cb-background: rgb(225, 137, 59);
+	--cb-mark-background: rgba(225, 137, 59, 0.6);
+	--background-direct: rgba(99, 100, 255, .05);
+	--alert: rgb(223, 64, 90);
+	*/
+}
+
+/*
+ * drawer（最左の投稿フォームがあるカラム）を固定
+ * 他カラムは横スクロール可能
+ *
+ */
+.column {
+  z-index: 0;
+}
+.drawer {
+  z-index: 1;
+  position: sticky;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--background-drawer);
+}
+
+/* 各カラムのアイコン色（新着ありの時）指定 */
+.column-header.active .column-header__icon,
+.column-header__button.active .fa-bullhorn,
+.column-header.active .fa-globe {
+  color: var(--active);
+}
+
+/* カラムのフィルターバー選択項目の色指定 */
+.account__section-headline a.active,
+.account__section-headline button.active,
+.notification__filter-bar a.active,
+.notification__filter-bar button.active {
+  color: var(--active);
+}
+
+/* メンションリンク、ハッシュタグリンクの文字色指定 */
+.edit-indicator__content a.unhandled-link,
+.reply-indicator__content a.unhandled-link,
+.status__content a.unhandled-link,
+.edit-indicator__content a,
+.reply-indicator__content a,
+.status__content a,
+.account__header__content a,
+.hashtag-bar {
+  color: var(--active);
+}
+
+/* 自分がしたリアクションを強調表示 反映されるまでにラグが出ることがある */
+.reactions-bar__item.active {
+  background-color: var(--active);
+}
+.reactions-bar__item.active .reactions-bar__item__count {
+  color: var(--foreground);
+}
+.status__action-bar .icon-button.active {
+  color: var(--active);
+}
+.icon-button.active .fa-retweet {
+  filter: sepia(100%) brightness(90%) hue-rotate(360deg) saturate(2000%)
+    contrast(60%);
+}
+
+/* リアクションボタンの表示を1行分に収め、必要に応じて横スクロール */
+.reactions-bar {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.reactions-bar__item {
+  max-width: 245px;
+}
+span.reactions-bar__item__emoji img.emojione.custom-emoji {
+  aspect-ratio: auto;
+  max-width: 180px;
+}
+.reactions-bar__item__emoji img {
+  aspect-ratio: auto;
+  max-width: 180px;
+  width: unset;
+}
+
+/* モーダルダイアログ */
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked:is(:hover, :focus-within):not(.react-toggle--disabled)
+  .react-toggle-track {
+  background: var(--active);
+}
+.embed-modal {
+  color: var(--foreground);
+  background: var(--background-light);
+}
+
+/* 
+ * drawerカラムの調整
+ *
+ */
+/* 投稿フォームの調整 */
+.compose-form .autosuggest-textarea__textarea,
+.compose-form .compose-form__modifiers,
+.compose-form__poll-wrapper select,
+.compose-form .compose-form__datetime-wrapper input,
+.compose-form .compose-form__datetime-wrapper select,
+.compose-form .spoiler-input__input,
+.compose-form .autosuggest-input input {
+  color: var(--foreground);
+  background-color: var(--background-dark);
+}
+.compose-form .compose-form__buttons-wrapper,
+.privacy-dropdown__dropdown {
+  background: var(--background-light);
+}
+.privacy-dropdown__option,
+.privacy-dropdown__option__content,
+.privacy-dropdown__option__content strong {
+  color: var(--foreground);
+}
+.privacy-dropdown__option.active {
+  background-color: var(--active);
+}
+.icon-button,
+.icon-button.inverted,
+.text-icon-button,
+.character-counter {
+  color: var(--compose-button-fg);
+}
+.icon-button.inverted.active,
+.text-icon-button.active,
+.text-icon-button.active:hover {
+  color: var(--active);
+}
+.compose-form__poll__select__value option {
+  background: var(--background-light);
+}
+
+/* 検索マニュアル */
+.search__popout__menu__item:hover {
+  background: var(--active);
+}
+
+.compose-form__poll-wrapper .icon-button {
+  color: var(--foreground);
+}
+
+/* アンケート項目 */
+.poll__option.editable .poll__input:active,
+.poll__option.editable .poll__input:focus,
+.poll__option.editable .poll__input:hover,
+.poll__option input[type="text"]:active,
+.poll__option input[type="text"]:focus {
+  border-color: var(--active);
+}
+
+/* 言語選択ドロップダウン */
+.language-dropdown__dropdown__results__item {
+  color: var(--disabled);
+}
+.language-dropdown__dropdown__results__item.active {
+  background-color: var(--active);
+}
+
+/*
+ * 投稿フォームの高さを拡張
+ * アンケート（2項目）・CW・をすべて開いた際にスクロールバーを出さないサイズに調整
+ *
+ */
+.compose-form .autosuggest-textarea__textarea {
+  min-height: 180px;
+  max-height: 180px;
+}
+
+/*
+ * 時間表記を日時込みの絶対時間表記に変更
+ * デフォルト表記を消して（size0にして）、titleに指定されている絶対時間を表示する
+ * フォントサイズはアカウント表記のものに合わせる
+ * 下記カード表記、通知表記の変更にも影響あり
+ * 
+ */
+/*
+ * デフォルト表記を消す
+ * カード表記、通知表記にも影響あり
+ *
+ */
+time {
+  font-size: 0;
+}
+/* 公開期限 */
+.status__expiration-time time:before {
+  content: "exp: ";
+  font-size: 0.9rem;
+}
+.status__expiration-time time:after {
+  content: attr(title);
+  font-size: 0.9rem;
+}
+/* 投稿日時 */
+.status__relative-time time:before {
+  content: "post: ";
+  font-size: 0.9rem;
+}
+.status__relative-time time:after {
+  content: attr(title);
+  font-size: 0.9rem;
+}
+
+/*
+ * 通知の表記変更
+ *
+ */
+/* 通知欄ホバー時に元投稿を表示し、通常時は一部のみ表示して隠すことでスリム化 */
+.notification-group__main__status {
+  max-height: 15px;
+  transition: 500ms max-height ease;
+  overflow: hidden;
+}
+.notification-group__main__status:hover {
+  max-height: 2000px;
+}
+/* フォロー通知・ブースト通知・お気に入り通知の日時表記 */
+.notification-group__main__header__label {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.notification-group__main__header__label span {
+  width: 100%;
+}
+
+.notification-group__main__header time {
+  display: initial;
+  margin-left: auto;
+}
+.notification-group__main__header__label time:after {
+  text-align: right;
+  content: attr(title);
+  font-size: 0.9rem;
+}
+
+/* 未読通知、非公開の返信の強調色 */
+.notification-group--unread:before,
+.notification-ungrouped--unread:before,
+.conversation.unread:before,
+.notification.unread:before,
+.status__wrapper.unread:before {
+  border-inline-start-color: var(--active);
+}
+.conversation__unread {
+  background: var(--active);
+}
+
+/* ボタン */
+.button.button-secondary.disabled,
+.button.button-secondary:disabled,
+.button.button-secondary.disabled:active,
+.button.button-secondary.disabled:focus,
+.button.button-secondary.disabled:hover,
+.button.button-secondary:disabled:active,
+.button.button-secondary:disabled:focus,
+.button.button-secondary:disabled:hover {
+  color: var(--foreground);
+  background: var(--button-disabled);
+  border-color: var(--button-disabled);
+}
+.button.button-secondary {
+  color: var(--foreground);
+  background: var(--button-normal);
+  border-color: var(--button-normal);
+}
+.button.button-secondary:active,
+.button.button-secondary:focus,
+.button.button-secondary:hover {
+  color: var(--foreground);
+  background: var(--button-active);
+  border-color: var(--button-active);
+}
+
+/* 
+ * 絵文字ピッカーの配色
+ *
+ */
+.emoji-picker-dropdown__menu,
+.emoji-mart-search,
+.emoji-mart-scroll,
+.dropdown-menu.dropdown-menu-reaction {
+  background: var(--background-dark);
+}
+.emoji-mart-anchors {
+  background-color: var(--background-light);
+}
+.emoji-mart-search input {
+  color: var(--foreground);
+  background-color: var(--background-light);
+}
+.emoji-mart-anchor-icon {
+  color: var(--foreground);
+}
+.emoji-mart-anchor-selected .emoji-mart-anchor-icon {
+  color: var(--active);
+}
+.emoji-mart-anchor-selected .emoji-mart-anchor-bar {
+  background: none;
+}
+.emoji-mart-category-label span {
+  color: var(--foreground);
+  background: var(--background-light);
+}
+.emoji-mart-emoji:hover {
+  background: var(--active);
+}
+
+/*
+ * 投稿の表記変更
+ *
+ */
+.status__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding-bottom: 0;
+}
+.status__info .status__display-name,
+.status.light .display-name {
+  min-width: 100%;
+  padding-right: 0;
+}
+/* 公開期限、投稿日時表記を右揃えに */
+.status__relative-time,
+.status__expiration-time {
+  height: fit-content;
+  margin: 0 0 0 auto;
+}
+
+/* カード表示の調整 */
+.layout-multiple-columns {
+  /* 上級者UI */
+  /* 通常版 */
+  .status-card:not(.expanded) {
+    height: 60px;
+  }
+  .status-card:not(.expanded) .status-card__image {
+    height: 60px;
+    width: 60px;
+  }
+  .status-card:not(.expanded) .status-card__content {
+    padding: 1px 4px;
+    height: 60px;
+    width: 100%;
+  }
+  .status-card:not(.expanded) .status-card__host {
+    height: 14px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card:not(.expanded) .status-card__host span {
+    height: 12px;
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+  .status-card:not(.expanded) time {
+    margin-left: auto;
+  }
+  .status-card:not(.expanded) time:after {
+    content: attr(title);
+    font-size: 0.6rem;
+  }
+  .status-card:not(.expanded) .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .status-card:not(.expanded) .status-card__author {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card:not(.expanded) .status-card__description {
+    display: none;
+  }
+
+  /* expanded版 */
+  .status-card.expanded {
+    height: 120px;
+  }
+  .status-card.expanded .status-card__image {
+    height: 60px;
+  }
+  .status-card.expanded .status-card__content {
+    padding: 1px 4px;
+    height: 60px;
+    width: 100%;
+  }
+  .status-card.expanded .status-card__host {
+    height: 14px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card.expanded .status-card__host span {
+    height: 12px;
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+  .status-card.expanded time {
+    margin-left: auto;
+  }
+  .status-card.expanded time:after {
+    content: attr(title);
+    font-size: 0.6rem;
+  }
+  .status-card.expanded .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .status-card.expanded .status-card__author {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card.expanded .status-card__description {
+    display: none;
+  }
+}
+
+.layout-single-column {
+  /* シングルカラム */
+  /* 通常版 */
+  .status-card:not(.expanded) {
+    height: 10vh;
+  }
+  .status-card:not(.expanded) .status-card__image {
+    height: 10vh;
+    width: 10vh;
+  }
+  .status-card:not(.expanded) .status-card__content {
+    padding: 2px 10px;
+    height: 100px;
+    width: 100%;
+  }
+  .status-card:not(.expanded) .status-card__host {
+    height: 30px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card:not(.expanded) .status-card__host span {
+    height: 40px;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  .status-card:not(.expanded) time {
+    margin-left: auto;
+  }
+  .status-card:not(.expanded) time:after {
+    content: attr(title);
+    font-size: 0.6rem;
+  }
+  .status-card:not(.expanded) .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .status-card:not(.expanded) .status-card__author {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card:not(.expanded) .status-card__description {
+    display: none;
+  }
+
+  /* expanded版 */
+  .status-card.expanded {
+    height: 70vh;
+  }
+  .status-card.expanded .status-card__image {
+    height: 60vh;
+  }
+  .status-card.expanded .status-card__content {
+    padding: 1px 4px;
+    height: 60px;
+    width: 100%;
+  }
+  .status-card.expanded .status-card__host {
+    height: 30px;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    display: flex;
+  }
+  .status-card.expanded .status-card__host span {
+    height: 30px;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  .status-card.expanded time {
+    margin-left: auto;
+  }
+  .status-card.expanded time:after {
+    content: attr(title);
+    font-size: 14px;
+  }
+  .status-card.expanded .status-card__title {
+    display: inherit;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .status-card.expanded .status-card__author {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-right: 1px;
+    text-align: right;
+  }
+  .status-card.expanded .status-card__description {
+    display: none;
+  }
+}
+
+/* 添付画像の最大サイズ（height）を制限する */
+.layout-multiple-columns {
+  .status .media-gallery {
+    max-height: 200px;
+  }
+}
+.layout-single-column {
+  .status .media-gallery {
+    max-height: 70vh;
+  }
+}
+
+/* コードブロック */
+.status__content__text pre,
+.e-content pre,
+.edit-indicator__content pre,
+.reply-indicator__content pre {
+  background-color: var(--background-dark);
+}
+.status__wrapper-direct {
+  .status__content__text pre,
+  .e-content pre,
+  .edit-indicator__content pre,
+  .reply-indicator__content pre {
+    background-color: var(--background-direct);
+  }
+}
+pre:has(code) {
+  border: 2px solid var(--cb-background);
+  border-radius: 10px;
+  padding: 6px;
+  code {
+    background-color: var(--background-dark);
+  }
+}
+.status__content__text code,
+.e-content code,
+.edit-indicator__content code,
+.reply-indicator__content code {
+  color: var(--foreground);
+  background-color: var(--cb-mark-background);
+}
+
+/* 引用 */
+.status__quote {
+  --quote-margin: 0;
+}
+.status__content__text blockquote,
+.e-content blockquote,
+.edit-indicator__content blockquote,
+.reply-indicator__content blockquote {
+  color: var(--foreground);
+}
+.status__content__text blockquote:before,
+.e-content blockquote:before,
+.edit-indicator__content blockquote:before,
+.reply-indicator__content blockquote:before {
+  --rich-text-decorations-color: var(--active);
+}
+
+/* アイコンバッジ */
+.icon-with-badge__badge {
+  background: var(--active);
+}
+.icon-with-badge__issue-badge {
+  background: var(--alert);
+}
+
+/* シングルカラムモードを画面横幅いっぱいに広げる */
+.layout-single-column {
+  .columns-area__panels__pane.columns-area__panels__pane--compositional {
+    position: absolute;
+    left: 0px;
+  }
+  .columns-area__panels__pane.columns-area__panels__pane--start.columns-area__panels__pane--navigational {
+    position: absolute;
+    right: 0px;
+  }
+  .columns-area__panels__main {
+    max-width: calc(100vw - 285px - 285px - 20px);
+  }
+}
