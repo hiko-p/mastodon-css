@@ -223,26 +223,35 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
  * カード表記、通知表記にも影響あり
  *
  */
-time {
-  font-size: 0;
-}
 /* 公開期限 */
-.status__expiration-time time:before {
-  content: "exp: ";
-  font-size: 0.9rem;
+.status__expiration-time time {
+  font-size: 0;
+  &::before {
+    content: "exp: ";
+    font-size: 0.9rem;
+  }
 }
-.status__expiration-time time:after {
-  content: attr(title);
-  font-size: 0.9rem;
+.status__expiration-time time {
+  font-size: 0;
+  &::after {
+    content: attr(title);
+    font-size: 0.9rem;
+  }
 }
 /* 投稿日時 */
-.status__relative-time time:before {
-  content: "post: ";
-  font-size: 0.9rem;
+.status__relative-time time {
+  font-size: 0;
+  &::before {
+    content: "post: ";
+    font-size: 0.9rem;
+  }
 }
-.status__relative-time time:after {
-  content: attr(title);
-  font-size: 0.9rem;
+.status__relative-time time {
+  font-size: 0;
+  &::after {
+    content: attr(title);
+    font-size: 0.9rem;
+  }
 }
 
 /*
@@ -268,6 +277,7 @@ time {
 }
 
 .notification-group__main__header time {
+  font-size: 0;
   display: initial;
   margin-left: auto;
 }
@@ -275,6 +285,9 @@ time {
   text-align: right;
   content: attr(title);
   font-size: 0.9rem;
+}
+.notification-group__main__header__label-separator {
+  font-size: 0;
 }
 
 /* 未読通知、非公開の返信の強調色 */
@@ -291,10 +304,10 @@ time {
 
 /* ボタン */
 .button.button-secondary.disabled,
-.button.button-secondary:disabled,
 .button.button-secondary.disabled:active,
 .button.button-secondary.disabled:focus,
 .button.button-secondary.disabled:hover,
+.button.button-secondary:disabled,
 .button.button-secondary:disabled:active,
 .button.button-secondary:disabled:focus,
 .button.button-secondary:disabled:hover {
@@ -400,6 +413,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card:not(.expanded) time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card:not(.expanded) time:after {
@@ -447,6 +461,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card.expanded time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card.expanded time:after {
@@ -498,6 +513,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card:not(.expanded) time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card:not(.expanded) time:after {
@@ -545,6 +561,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card.expanded time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card.expanded time:after {
