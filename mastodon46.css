@@ -3,8 +3,9 @@
  *
  */
 /* 色指定 */
-:root {
-  /* for ダーク or ハイコントラスト */
+/* for ダーク */
+:root[data-color-scheme="dark"],
+html:not([data-color-scheme]) {
   --foreground: rgb(255, 255, 255);
   --background-drawer: rgb(24, 26, 27);
   --background-dark: rgb(24, 26, 27);
@@ -22,29 +23,38 @@
   --cb-mark-background: rgba(225, 137, 59, 0.6);
   --background-direct: rgba(99, 100, 255, 0.05);
   --alert: rgb(223, 64, 90);
-
-  /* for ライト */
-  /*
-	--foreground: rgb(0, 0, 0);
-	--background-drawer: rgb(239, 243, 245);
-	--background-dark: rgb(255, 255, 255);
-	--background-light: rgb(255, 255, 255);
-	--article-border: rgb(192, 205, 217);
-	--active: rgb(225, 137, 59);
-	--disabled: rgb(155, 174, 200);
-	--calendar-weekend: rgb(255, 0, 0);
-	--button-foreground: rgb(255, 255, 255);
-	--button-disabled: rgb(140, 141, 255);
-	--button-normal: rgb(86, 58, 204);
-	--button-active: rgb(225, 137, 59);
-	--compose-button-fg: rgb(96, 105, 132);
-	--cb-background: rgb(225, 137, 59);
-	--cb-mark-background: rgba(225, 137, 59, 0.6);
-	--background-direct: rgba(99, 100, 255, .05);
-	--alert: rgb(223, 64, 90);
-	*/
 }
 
+/* for ライト */
+:root[data-color-scheme="light"] {
+  --foreground: rgb(0, 0, 0);
+  --background-drawer: rgb(239, 243, 245);
+  --background-dark: rgb(255, 255, 255);
+  --background-light: rgb(255, 255, 255);
+  --article-border: rgb(192, 205, 217);
+  --active: rgb(225, 137, 59);
+  --disabled: rgb(155, 174, 200);
+  --calendar-weekend: rgb(255, 0, 0);
+  --button-foreground: rgb(255, 255, 255);
+  --button-disabled: rgb(140, 141, 255);
+  --button-normal: rgb(86, 58, 204);
+  --button-active: rgb(225, 137, 59);
+  --compose-button-fg: rgb(96, 105, 132);
+  --cb-background: rgb(225, 137, 59);
+  --cb-mark-background: rgba(225, 137, 59, 0.6);
+  --background-direct: rgba(99, 100, 255, 0.05);
+  --alert: rgb(223, 64, 90);
+}
+
+/* ハイコントラスト */
+/*
+[data-color-scheme="dark"][data-contrast="high"],
+[data-contrast="high"] [data-color-scheme="dark"],
+html:not([data-color-scheme])[data-contrast="high"],
+[data-contrast="high"] html:not([data-color-scheme]) {
+
+}
+*/
 /*
  * drawer（最左の投稿フォームがあるカラム）を固定
  * 他カラムは横スクロール可能
