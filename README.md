@@ -56,10 +56,14 @@ mastodon4.6向けに対し、data-color-scheme対応をしました。
 
 - TL 内投稿下部のアクションバーのずれ（アイコンが重なり合う）を解消
 
-## Mastodon4.5 向け
+## Mastodon 向け
+
+共通の対応に合わせて、シングルカラムモードを画面一杯に広げる処理を追加しています。
+
+### Mastodon4.5 向け
 
 `mastodon45.css`をお使いください。
 
-## Mastodon4.6 向け
+### Mastodon4.6 向け
 
 `mastodon46.css`をお使いください。
