@@ -46,19 +46,15 @@
 }
 
 /*
- * drawer（最左の投稿フォームがあるカラム）を固定
- * 他カラムは横スクロール可能
+ * 上級者UIのdrawer（最左の投稿フォームがあるカラム）はマウスホバーまたは子孫要素がフォーカスされている時のみ表示
  *
  */
-.column {
-  z-index: 0;
-}
 .drawer {
-  z-index: 1;
-  position: sticky;
-  left: 0;
-  overflow: hidden;
-  background-color: var(--background-drawer);
+  width: 0px;
+  &:hover,
+  &:focus-within {
+    width: 365px;
+  }
 }
 
 /* 各カラムのアイコン色（新着ありの時）指定 */

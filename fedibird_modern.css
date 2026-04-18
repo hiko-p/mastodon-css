@@ -95,19 +95,15 @@ samp {
 }
 
 /*
- * 上級者UIのdrawer（最左の投稿フォームがあるカラム）を固定
- * 他カラムは横スクロール可能
+ * 上級者UIのdrawer（最左の投稿フォームがあるカラム）はマウスホバーまたは子孫要素がフォーカスされている時のみ表示
  *
  */
-.column {
-  z-index: 0;
-}
 .drawer {
-  z-index: 1;
-  position: sticky;
-  left: 0;
-  overflow: hidden;
-  background-color: var(--background-drawer);
+  width: 0px;
+  &:hover,
+  &:focus-within {
+    width: 365px;
+  }
 }
 
 /* 通常UIのInstanceTicker表示（大）が領域をはみ出るので、収まるように調整してスクロールバー表示を抑制 */
@@ -271,9 +267,6 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
  * drawerカラムの調整
  *
  */
-.drawer {
-  width: 365px;
-}
 /* 投稿フォームの調整 */
 .compose-form .autosuggest-textarea__textarea,
 .compose-form .compose-form__modifiers,
