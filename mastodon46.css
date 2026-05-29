@@ -54,6 +54,7 @@ html:not([data-color-scheme])[data-contrast="high"],
 [data-contrast="high"] html:not([data-color-scheme]) {
 
 }
+*/
 /*
  * 上級者UIのdrawer（最左の投稿フォームがあるカラム）はマウスホバーまたは子孫要素がフォーカスされている時のみ表示
  *
@@ -506,7 +507,7 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
     width: 100%;
   }
   .status-card:not(.expanded) .status-card__host {
-    height: 30px;
+    height: 20px;
     font-size: 0;
     width: 100%;
     margin-bottom: 1px;
@@ -523,7 +524,7 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
   }
   .status-card:not(.expanded) time:after {
     content: attr(title);
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
   .status-card:not(.expanded) .status-card__title {
     display: inherit;
@@ -532,13 +533,10 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
     white-space: nowrap;
   }
   .status-card:not(.expanded) .status-card__author {
-    font-size: 12px;
-    margin-top: 1px;
+    font-size: 14px;
+    margin-top: 16px;
     margin-right: 1px;
     text-align: right;
-  }
-  .status-card:not(.expanded) .status-card__description {
-    display: none;
   }
 
   /* expanded版 */
@@ -549,12 +547,12 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
     height: 60vh;
   }
   .status-card.expanded .status-card__content {
-    padding: 1px 4px;
-    height: 60px;
+    padding: 4px 4px;
+    height: 100%;
     width: 100%;
   }
   .status-card.expanded .status-card__host {
-    height: 30px;
+    height: 20px;
     font-size: 0;
     width: 100%;
     margin-bottom: 1px;
@@ -581,12 +579,9 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
   }
   .status-card.expanded .status-card__author {
     font-size: 16px;
-    margin-top: 16px;
+    margin-top: 30px;
     margin-right: 1px;
     text-align: right;
-  }
-  .status-card.expanded .status-card__description {
-    display: none;
   }
 }
 
@@ -671,4 +666,11 @@ pre:has(code) {
   .columns-area__panels__main {
     max-width: calc(100vw - 285px - 285px - 20px);
   }
+}
+
+/* 横長絵文字の表示調整 */
+.status__content .emojione,
+.edit-indicator__content .emojione,
+.reply-indicator__content .emojione {
+  width: fit-content;
 }
