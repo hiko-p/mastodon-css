@@ -40,19 +40,20 @@
 }
 
 /*
- * 上級者UIのdrawer（最左の投稿フォームがあるカラム）はマウスホバーまたは子孫要素がフォーカスされている時のみ表示
+ * 上級者UIのdrawer（最左の投稿フォームがあるカラム）を固定
+ * 他カラムは横スクロール可能
  *
  */
-.drawer {
-  width: 0px;
-  &:hover,
-  &:focus-within {
-    width: 365px;
-  }
+.column {
+  z-index: 0;
 }
-
-body:has(.dropdown-animation) .drawer {
+.drawer {
+  z-index: 1;
+  position: sticky;
+  left: 0;
+  overflow: hidden;
   width: 365px;
+  background-color: var(--background-drawer);
 }
 
 /* 通常UIのInstanceTicker表示（大）が領域をはみ出るので、収まるように調整してスクロールバー表示を抑制 */
