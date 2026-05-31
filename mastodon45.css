@@ -57,6 +57,10 @@
   }
 }
 
+body:has(.dropdown-animation) .drawer {
+  width: 365px;
+}
+
 /* 各カラムのアイコン色（新着ありの時）指定 */
 .column-header.active .column-header__icon,
 .column-header__button.active .fa-bullhorn,
@@ -219,26 +223,35 @@ span.reactions-bar__item__emoji img.emojione.custom-emoji {
  * カード表記、通知表記にも影響あり
  *
  */
-time {
-  font-size: 0;
-}
 /* 公開期限 */
-.status__expiration-time time:before {
-  content: "exp: ";
-  font-size: 0.9rem;
+.status__expiration-time time {
+  font-size: 0;
+  &::before {
+    content: "exp: ";
+    font-size: 0.9rem;
+  }
 }
-.status__expiration-time time:after {
-  content: attr(title);
-  font-size: 0.9rem;
+.status__expiration-time time {
+  font-size: 0;
+  &::after {
+    content: attr(title);
+    font-size: 0.9rem;
+  }
 }
 /* 投稿日時 */
-.status__relative-time time:before {
-  content: "post: ";
-  font-size: 0.9rem;
+.status__relative-time time {
+  font-size: 0;
+  &::before {
+    content: "post: ";
+    font-size: 0.9rem;
+  }
 }
-.status__relative-time time:after {
-  content: attr(title);
-  font-size: 0.9rem;
+.status__relative-time time {
+  font-size: 0;
+  &::after {
+    content: attr(title);
+    font-size: 0.9rem;
+  }
 }
 
 /*
@@ -264,6 +277,7 @@ time {
 }
 
 .notification-group__main__header time {
+  font-size: 0;
   display: initial;
   margin-left: auto;
 }
@@ -271,6 +285,9 @@ time {
   text-align: right;
   content: attr(title);
   font-size: 0.9rem;
+}
+.notification-group__main__header__label-separator {
+  font-size: 0;
 }
 
 /* 未読通知、非公開の返信の強調色 */
@@ -287,10 +304,10 @@ time {
 
 /* ボタン */
 .button.button-secondary.disabled,
-.button.button-secondary:disabled,
 .button.button-secondary.disabled:active,
 .button.button-secondary.disabled:focus,
 .button.button-secondary.disabled:hover,
+.button.button-secondary:disabled,
 .button.button-secondary:disabled:active,
 .button.button-secondary:disabled:focus,
 .button.button-secondary:disabled:hover {
@@ -396,6 +413,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card:not(.expanded) time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card:not(.expanded) time:after {
@@ -443,6 +461,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card.expanded time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card.expanded time:after {
@@ -482,7 +501,7 @@ time {
     width: 100%;
   }
   .status-card:not(.expanded) .status-card__host {
-    height: 30px;
+    height: 20px;
     font-size: 0;
     width: 100%;
     margin-bottom: 1px;
@@ -494,11 +513,12 @@ time {
     margin-bottom: 1px;
   }
   .status-card:not(.expanded) time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card:not(.expanded) time:after {
     content: attr(title);
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
   .status-card:not(.expanded) .status-card__title {
     display: inherit;
@@ -507,13 +527,10 @@ time {
     white-space: nowrap;
   }
   .status-card:not(.expanded) .status-card__author {
-    font-size: 12px;
-    margin-top: 1px;
+    font-size: 14px;
+    margin-top: 30px;
     margin-right: 1px;
     text-align: right;
-  }
-  .status-card:not(.expanded) .status-card__description {
-    display: none;
   }
 
   /* expanded版 */
@@ -524,12 +541,12 @@ time {
     height: 60vh;
   }
   .status-card.expanded .status-card__content {
-    padding: 1px 4px;
-    height: 60px;
+    padding: 4px 4px;
+    height: 100%;
     width: 100%;
   }
   .status-card.expanded .status-card__host {
-    height: 30px;
+    height: 20px;
     font-size: 0;
     width: 100%;
     margin-bottom: 1px;
@@ -541,6 +558,7 @@ time {
     margin-bottom: 1px;
   }
   .status-card.expanded time {
+    font-size: 0;
     margin-left: auto;
   }
   .status-card.expanded time:after {
@@ -555,12 +573,9 @@ time {
   }
   .status-card.expanded .status-card__author {
     font-size: 16px;
-    margin-top: 16px;
+    margin-top: 30px;
     margin-right: 1px;
     text-align: right;
-  }
-  .status-card.expanded .status-card__description {
-    display: none;
   }
 }
 
@@ -645,4 +660,11 @@ pre:has(code) {
   .columns-area__panels__main {
     max-width: calc(100vw - 285px - 285px - 20px);
   }
+}
+
+/* 横長絵文字の表示調整 */
+.status__content .emojione,
+.edit-indicator__content .emojione,
+.reply-indicator__content .emojione {
+  width: fit-content;
 }

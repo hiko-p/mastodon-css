@@ -67,6 +67,10 @@ html:not([data-color-scheme])[data-contrast="high"],
   }
 }
 
+body:has(.dropdown-animation) .drawer {
+  width: 365px;
+}
+
 /* 各カラムのアイコン色（新着ありの時）指定 */
 .column-header.active .column-header__icon,
 .column-header__button.active .fa-bullhorn,
