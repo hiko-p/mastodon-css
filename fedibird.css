@@ -610,7 +610,7 @@ pre:has(code) {
   }
 }
 code {
-  background-color: var(--cb-mark-background: );
+  background-color: var(--cb-mark-background);
 }
 
 /* アイコンバッジ */
