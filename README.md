@@ -61,13 +61,13 @@ mastodon4.6向けに対し、data-color-scheme対応をしました。
 
 共通の対応に合わせて、シングルカラムモードを画面一杯に広げる処理を追加しています。
 
-### Mastodon4.5 向け
-
-`mastodon45.css`をお使いください。
-
 ### Mastodon4.6 向け
 
 `mastodon46.css`をお使いください。
+
+### Mastodon4.7 向け
+
+`mastodon47.css`をお使いください。
 
 ### 上記に記載のないバージョン向け
 
